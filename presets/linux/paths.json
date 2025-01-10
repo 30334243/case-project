@@ -1,0 +1,21 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 23,
+        "patch": 0
+    },
+    "include": [
+        "../environment.json"
+    ],
+    "configurePresets": [
+        {
+            "name": "linux-paths",
+            "hidden": true,
+            "inherits": [
+                "environment"
+            ],
+            "binaryDir": "$env{HOME}/cxx/builds/$env{PROJECT_NAME}/linux/${presetName}"
+        }
+    ]
+}

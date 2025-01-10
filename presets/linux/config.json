@@ -1,0 +1,42 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 23,
+        "patch": 0
+    },
+    "include": [
+        "paths.json"
+    ],
+    "configurePresets": [
+        {
+            "name": "linux",
+            "hidden": true,
+            "inherits": [
+                "linux-paths"
+            ],
+            "generator": "Unix Makefiles",
+            "cacheVariables": {
+                "ASTRA_FLAG": "ON"
+            }
+        },
+        {
+            "name": "linux-debug",
+            "inherits": [
+                "linux"
+            ],
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        },
+        {
+            "name": "linux-release",
+            "inherits": [
+                "linux"
+            ],
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release"
+            }
+        }
+    ]
+}

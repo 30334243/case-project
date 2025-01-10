@@ -1,0 +1,15 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 23,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "generator-vs-2019",
+            "hidden": true,
+            "generator": "Visual Studio 16 2019"
+        }
+    ]
+}

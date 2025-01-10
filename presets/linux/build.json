@@ -1,0 +1,25 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 23,
+        "patch": 0
+    },
+    "include": [
+        "config.json"
+    ],
+    "buildPresets": [
+        {
+            "name": "linux-debug-build",
+            "configurePreset": "linux-debug",
+            "configuration": "Debug",
+            "jobs": 16
+        },
+        {
+            "name": "linux-release-build",
+            "configurePreset": "linux-release",
+            "configuration": "Release",
+            "jobs": 16
+        }
+    ]
+}

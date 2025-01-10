@@ -1,0 +1,21 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 23,
+        "patch": 0
+    },
+    "include": [
+        "../environment.json"
+    ],
+    "configurePresets": [
+        {
+            "name": "windows-paths",
+            "hidden": true,
+            "inherits": [
+                "environment"
+            ],
+            "binaryDir": "$env{USERPROFILE}/cxx/builds/$env{PROJECT_NAME}/windows/${presetName}"
+        }
+    ]
+}

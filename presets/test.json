@@ -1,0 +1,28 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 23,
+        "patch": 0
+    },
+    "testPresets": [
+        {
+            "name": "default",
+            "hidden": true,
+            "execution": {
+                "noTestsAction": "error",
+                "stopOnFailure": true
+            },
+            "output": {
+                "outputOnFailure": true,
+                "shortProgress": true,
+                "verbosity": "extra"
+            },
+            "filter": {
+                "include": {
+                    "name": "test_bitreader"
+                }
+            }
+        }
+    ]
+}

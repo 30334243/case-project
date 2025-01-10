@@ -1,0 +1,26 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 23,
+        "patch": 0
+    },
+    "include": [
+        "paths.json"
+    ],
+    "configurePresets": [
+        {
+            "name": "windows",
+            "hidden": true,
+            "inherits": [
+                "windows-paths"
+            ],
+            "cacheVariables": {
+                "WINDOWS_FLAG": "ON",
+                "BITREADER_TEST": "ON",
+                "BITREADER_BENCHMARK": "ON",
+                "GTest_DIR": "$env{USERPROFILE}/cxx/$env{PROJECT_NAME}/3rdparty/windows/vs-2019/GTest/lib/cmake/GTest"
+            }
+        }
+    ]
+}

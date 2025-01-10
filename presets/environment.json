@@ -1,0 +1,17 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 23,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "environment",
+            "hidden": true,
+            "environment": {
+                "PROJECT_NAME": "bitreader"
+            }
+        }
+    ]
+}

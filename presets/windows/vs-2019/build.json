@@ -1,0 +1,25 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 23,
+        "patch": 0
+    },
+    "include": [
+        "config.json"
+    ],
+    "buildPresets": [
+        {
+            "name": "vs-2019-debug",
+            "configurePreset": "vs-2019",
+            "configuration": "Debug",
+            "jobs": 16
+        },
+        {
+            "name": "vs-2019-release",
+            "configurePreset": "vs-2019",
+            "configuration": "Release",
+            "jobs": 16
+        }
+    ]
+}

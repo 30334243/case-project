@@ -1,0 +1,14 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 23,
+    "patch": 0
+  },
+  "include": [
+    "presets/windows/vs-2019/lib/workflow.json",
+    "presets/windows/vs-2019/test/workflow.json",
+    "presets/linux/lib/workflow.json",
+    "presets/linux/test/workflow.json"
+  ]
+}

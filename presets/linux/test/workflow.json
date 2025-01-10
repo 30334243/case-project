@@ -1,0 +1,58 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 23,
+        "patch": 0
+    },
+    "include": [
+        "../config.json",
+        "../build.json",
+        "../package.json",
+        "test.json"
+    ],
+    "workflowPresets": [
+        {
+            "name": "linux-ci-debug-test",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "linux-debug"
+                },
+                {
+                    "type": "build",
+                    "name": "linux-debug-build"
+                },
+                {
+                    "type": "test",
+                    "name": "linux-debug-test"
+                },
+                {
+                    "type": "package",
+                    "name": "linux-debug-package"
+                }
+            ]
+        },
+        {
+            "name": "linux-ci-release-test",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "linux-release"
+                },
+                {
+                    "type": "build",
+                    "name": "linux-release-build"
+                },
+                {
+                    "type": "test",
+                    "name": "linux-release-test"
+                },
+                {
+                    "type": "package",
+                    "name": "linux-release-package"
+                }
+            ]
+        }
+    ]
+}

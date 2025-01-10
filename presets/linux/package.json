@@ -1,0 +1,35 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 23,
+        "patch": 0
+    },
+    "include": [
+        "config.json"
+    ],
+    "packagePresets": [
+        {
+            "name": "linux-debug-package",
+            "configurePreset": "linux-debug",
+            "configurations": [
+                "Debug"
+            ],
+            "packageDirectory": "install",
+            "generators": [
+                "ZIP"
+            ]
+        },
+        {
+            "name": "linux-release-package",
+            "configurePreset": "linux-release",
+            "configurations": [
+                "Release"
+            ],
+            "packageDirectory": "install",
+            "generators": [
+                "ZIP"
+            ]
+        }
+    ]
+}
