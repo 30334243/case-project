@@ -85,8 +85,8 @@
         "WINDOWS_FLAG": "ON",
         "OPS_TEST": "ON",
         "OPS_BENCHMARK": "ON",
-        "GTest_DIR": "$env{USERPROFILE}/cxx/$env{PROJECT_NAME}/3rdparty/GTest/lib/cmake/GTest",
-        "fmt_DIR": "$env{USERPROFILE}/cxx/$env{PROJECT_NAME}/3rdparty/fmt/lib/cmake/fmt"
+        "GTest_DIR": "$env{USERPROFILE}/cxx/$env{PROJECT_NAME}/3rdparty/windows/vs-2019/GTest/lib/cmake/GTest",
+        "fmt_DIR": "$env{USERPROFILE}/cxx/$env{PROJECT_NAME}/3rdparty/windows/vs-2019/fmt/lib/cmake/fmt"
     }
     ...
     ~~~
@@ -106,19 +106,32 @@
         target_link_libraries(${PROJECT_NAME} PUBLIC stdc++fs)
     endif()
     ~~~
-4. Добавить копирование тестовых файлов в `test/CMakeLists.txt` (если нужно)
+1. Переменные для `release` и `debug`
+    ~~~
+    ...
+    "name": "linux-debug",
+    "inherits": [
+        "linux"
+    ],
+    "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "GTest_DIR": "$env{HOME}/cxx/$env{PROJECT_NAME}/3rdparty/linux/GTest-debug/lib/cmake/GTest"
+    }
+    ...
+    ~~~
+2. Добавить копирование тестовых файлов в `test/CMakeLists.txt` (если нужно)
     ~~~
     add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
             COMMAND ${CMAKE_COMMAND} -E copy_directory "${CMAKE_CURRENT_SOURCE_DIR}/files" "${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/files"
             COMMAND ${CMAKE_COMMAND} -E copy_directory "${CMAKE_CURRENT_SOURCE_DIR}/files" "${CMAKE_BINARY_DIR}/test/files"
     )
     ~~~
-5. Добавить поиск необходимых библиотек в `CMakeLists.txt`
+3. Добавить поиск необходимых библиотек в `CMakeLists.txt`
     ~~~
     find_package(GTest CONFIG REQUIRED)
     message("GTest=${GTest_VERSION}")
     ~~~
-6. Добавить переменные cmake в исходники (если нужно)
+4. Добавить переменные cmake в исходники (если нужно)
     ~~~
     add_definitions(-DWINDOWS_FLAG)
     ~~~
