@@ -106,7 +106,7 @@
         target_link_libraries(${PROJECT_NAME} PUBLIC stdc++fs)
     endif()
     ~~~
-1. Переменные для `release` и `debug`
+1. Переменные в конфигурации в `Linux` для `release` и `debug` 
     ~~~
     ...
     "name": "linux-debug",
