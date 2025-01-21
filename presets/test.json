@@ -17,11 +17,6 @@
                 "outputOnFailure": true,
                 "shortProgress": true,
                 "verbosity": "extra"
-            },
-            "filter": {
-                "include": {
-                    "name": "test_bitreader"
-                }
             }
         }
     ]
