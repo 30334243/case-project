@@ -6,16 +6,18 @@
         "patch": 0
     },
     "include": [
-        "../config.json"
+        "../config.json",
+        "../../linux.json"
     ],
     "configurePresets": [
         {
-            "name": "linux-library-static-debug",
+            "name": "linux-library-static",
+            "hidden": true,
             "inherits": [
                 "linux-library"
             ],
             "cacheVariables": {
-                "CMAKE_SHARED_LIBS": "OFF"
+                "CMAKE_SHARED_LIBS": "ON"
             },
             "condition": {
                 "type": "equals",
@@ -24,17 +26,23 @@
             }
         },
         {
-            "name": "linux-library-static-release",
+            "name": "linux-library-static-debug",
             "inherits": [
-                "linux-library"
+                "linux-library-static",
+                "linux-debug"
             ],
             "cacheVariables": {
                 "CMAKE_SHARED_LIBS": "OFF"
-            },
-            "condition": {
-                "type": "equals",
-                "lhs": "${hostSystemName}",
-                "rhs": "Linux"
+            }
+        },
+        {
+            "name": "linux-library-static-release",
+            "inherits": [
+                "linux-library-static",
+                "linux-release"
+            ],
+            "cacheVariables": {
+                "CMAKE_SHARED_LIBS": "OFF"
             }
         }
     ]

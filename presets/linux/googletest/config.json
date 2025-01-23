@@ -27,7 +27,8 @@
         {
             "name": "linux-googletest-debug",
             "inherits": [
-                "linux-googletest"
+                "linux-googletest",
+                "linux-debug"
             ],
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug",
@@ -37,7 +38,8 @@
         {
             "name": "linux-googletest-release",
             "inherits": [
-                "linux-googletest"
+                "linux-googletest",
+                "linux-release"
             ],
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Release",

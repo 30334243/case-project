@@ -8,6 +8,7 @@
     "include": [
         "config.json",
         "build.json",
+        "test.json",
         "package.json"
     ],
     "workflowPresets": [
@@ -21,6 +22,10 @@
                 {
                     "type": "build",
                     "name": "linux-benchmark-debug-build"
+                },
+                {
+                    "type": "test",
+                    "name": "linux-benchmark-debug-test"
                 },
                 {
                     "type": "package",
@@ -38,6 +43,10 @@
                 {
                     "type": "build",
                     "name": "linux-benchmark-release-build"
+                },
+                {
+                    "type": "test",
+                    "name": "linux-benchmark-release-test"
                 },
                 {
                     "type": "package",

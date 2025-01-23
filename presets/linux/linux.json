@@ -20,6 +20,26 @@
                 "LINUX_FLAG": "ON"
             },
             "binaryDir": "$env{HOME_PATH}/cxx/builds/$env{PROJECT_NAME}/$env{OS}/${presetName}"
+        },
+        {
+            "name": "linux-debug",
+            "hidden": true,
+            "inherits": [
+                "linux"
+            ],
+            "cacheVariables": {
+                "fmt_DIR": "$env{HOME_PATH}/cxx/$env{PROJECT_NAME}/3rdparty/$env{OS}/fmt-debug/lib/cmake/fmt"
+            }
+        },
+        {
+            "name": "linux-release",
+            "hidden": true,
+            "inherits": [
+                "linux"
+            ],
+            "cacheVariables": {
+                "fmt_DIR": "$env{HOME_PATH}/cxx/$env{PROJECT_NAME}/3rdparty/$env{OS}/fmt-release/lib/cmake/fmt"
+            }
         }
     ]
 }

@@ -27,7 +27,8 @@
         {
             "name": "linux-library-shared-debug",
             "inherits": [
-                "linux-library-shared"
+                "linux-library-shared",
+                "linux-debug"
             ],
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug"
@@ -36,7 +37,8 @@
         {
             "name": "linux-library-shared-release",
             "inherits": [
-                "linux-library-shared"
+                "linux-library-shared",
+                "linux-debug"
             ],
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Release"

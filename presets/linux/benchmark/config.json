@@ -27,7 +27,8 @@
         {
             "name": "linux-benchmark-debug",
             "inherits": [
-                "linux-benchmark"
+                "linux-benchmark",
+                "linux-debug"
             ],
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug",
@@ -37,7 +38,8 @@
         {
             "name": "linux-benchmark-release",
             "inherits": [
-                "linux-benchmark"
+                "linux-benchmark",
+                "linux-release"
             ],
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Release",
