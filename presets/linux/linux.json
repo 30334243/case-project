@@ -1,0 +1,25 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 23,
+        "patch": 0
+    },
+    "include": [
+        "environment.json"
+    ],
+    "configurePresets": [
+        {
+            "name": "linux",
+            "hidden": true,
+            "inherits": [
+                "linux-environment"
+            ],
+            "generator": "Unix Makefiles",
+            "cacheVariables": {
+                "LINUX_FLAG": "ON"
+            },
+            "binaryDir": "$env{HOME_PATH}/cxx/builds/$env{PROJECT_NAME}/$env{OS}/${presetName}"
+        }
+    ]
+}

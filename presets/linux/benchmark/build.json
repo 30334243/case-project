@@ -1,0 +1,38 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 23,
+        "patch": 0
+    },
+    "include": [
+        "config.json"
+    ],
+    "buildPresets": [
+        {
+            "name": "linux-benchmark-build",
+            "hidden": true,
+            "configurePreset": "linux-benchmark",
+            "jobs": 16,
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Linux"
+            }
+        },
+        {
+            "name": "linux-benchmark-debug-build",
+            "inherits": [
+                "linux-benchmark-build"
+            ],
+            "configurePreset": "linux-benchmark-debug"
+        },
+        {
+            "name": "linux-benchmark-release-build",
+            "inherits": [
+                "linux-benchmark-build"
+            ],
+            "configurePreset": "linux-benchmark-release"
+        }
+    ]
+}

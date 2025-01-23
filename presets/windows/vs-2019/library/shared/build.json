@@ -1,0 +1,39 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 23,
+        "patch": 0
+    },
+    "include": [
+        "config.json"
+    ],
+    "buildPresets": [
+        {
+            "name": "vs-2019-library-shared",
+            "hidden": true,
+            "configurePreset": "vs-2019-library-shared",
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "vs-2019-library-shared-debug",
+            "inherits": [
+                "vs-2019-library-shared"
+            ],
+            "configurePreset": "vs-2019-library-shared",
+            "configuration": "Debug"
+        },
+        {
+            "name": "vs-2019-library-shared-release",
+            "inherits": [
+                "vs-2019-library-shared"
+            ],
+            "configurePreset": "vs-2019-library-shared",
+            "configuration": "Release"
+        }
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 23,
+        "patch": 0
+    },
+    "include": [
+        "../name.json"
+    ],
+    "configurePresets": [
+        {
+            "name": "linux-environment",
+            "hidden": true,
+            "inherits": [
+                "name"
+            ],
+            "environment": {
+                "OS": "linux",
+                "HOME_PATH": "$env{HOME}"
+            }
+        }
+    ]
+}

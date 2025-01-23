@@ -1,0 +1,48 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 23,
+        "patch": 0
+    },
+    "include": [
+        "../linux.json"
+    ],
+    "configurePresets": [
+        {
+            "name": "linux-googletest",
+            "hidden": true,
+            "inherits": [
+                "linux"
+            ],
+            "cacheVariables": {
+                "IS_GOOGLETEST": "ON"
+            },
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Linux"
+            }
+        },
+        {
+            "name": "linux-googletest-debug",
+            "inherits": [
+                "linux-googletest"
+            ],
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "GTest_DIR": "$env{HOME_PATH}/cxx/$env{PROJECT_NAME}/3rdparty/$env{OS}/GTest-debug/lib/cmake/GTest"
+            }
+        },
+        {
+            "name": "linux-googletest-release",
+            "inherits": [
+                "linux-googletest"
+            ],
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release",
+                "GTest_DIR": "$env{HOME_PATH}/cxx/$env{PROJECT_NAME}/3rdparty/$env{OS}/GTest-release/lib/cmake/GTest"
+            }
+        }
+    ]
+}

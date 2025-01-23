@@ -1,0 +1,43 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 23,
+        "patch": 0
+    },
+    "include": [
+        "config.json",
+        "../../test.json"
+    ],
+    "testPresets": [
+        {
+            "name": "linux-googletest-test",
+            "hidden": true,
+            "inherits": [
+                "default"
+            ],
+            "configurePreset": "linux-googletest",
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Linux"
+            }
+        },
+        {
+            "name": "linux-googletest-debug-test",
+            "inherits": [
+                "linux-googletest-test"
+            ],
+            "configurePreset": "linux-googletest-debug",
+            "configuration": "Debug"
+        },
+        {
+            "name": "linux-googletest-release-test",
+            "inherits": [
+                "linux-googletest-test"
+            ],
+            "configurePreset": "linux-googletest-release",
+            "configuration": "Release"
+        }
+    ]
+}

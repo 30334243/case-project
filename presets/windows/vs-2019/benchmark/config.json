@@ -1,0 +1,30 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 23,
+        "patch": 0
+    },
+    "include": [
+        "../../windows.json",
+        "../generator.json"
+    ],
+    "configurePresets": [
+        {
+            "name": "vs-2019-benchmark",
+            "inherits": [
+                "windows",
+                "generator-vs-2019"
+            ],
+            "cacheVariables": {
+                "IS_BENCHMARK": "ON",
+                "benchmark_DIR": "$env{HOME_PATH}/cxx/$env{PROJECT_NAME}/3rdparty/$env{OS}/benchmark/lib/cmake/benchmark"
+            },
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        }
+    ]
+}

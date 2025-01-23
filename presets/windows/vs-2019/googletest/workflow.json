@@ -1,0 +1,45 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 23,
+        "patch": 0
+    },
+    "include": [
+        "config.json",
+        "test.json",
+        "build.json",
+        "package.json"
+    ],
+    "workflowPresets": [
+        {
+            "name": "vs-2019-googletest-ci",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "vs-2019-googletest"
+                },
+                {
+                    "type": "build",
+                    "name": "vs-2019-googletest-debug"
+                },
+                {
+                    "type": "build",
+                    "name": "vs-2019-googletest-release"
+                },
+                {
+                    "type": "test",
+                    "name": "vs-2019-googletest-debug-test"
+                },
+                {
+                    "type": "test",
+                    "name": "vs-2019-googletest-release-test"
+                },
+                {
+                    "type": "package",
+                    "name": "vs-2019-googletest-package"
+                }
+            ]
+        }
+    ]
+}

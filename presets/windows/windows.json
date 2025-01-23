@@ -6,21 +6,21 @@
         "patch": 0
     },
     "include": [
-        "paths.json"
+        "environment.json"
     ],
     "configurePresets": [
         {
             "name": "windows",
             "hidden": true,
             "inherits": [
-                "windows-paths"
+                "windows-environment"
             ],
             "cacheVariables": {
                 "WINDOWS_FLAG": "ON",
-                "BITREADER_TEST": "ON",
-                "BITREADER_BENCHMARK": "ON",
-                "GTest_DIR": "$env{USERPROFILE}/cxx/$env{PROJECT_NAME}/3rdparty/windows/vs-2019/GTest/lib/cmake/GTest"
-            }
+                "CMAKE_DEBUG_POSTFIX": "d",
+                "fmt_DIR": "$env{HOME_PATH}/cxx/$env{PROJECT_NAME}/3rdparty/$env{OS}/fmt/lib/cmake/fmt"
+            },
+            "binaryDir": "$env{HOME_PATH}/cxx/builds/$env{PROJECT_NAME}/$env{OS}/${presetName}"
         }
     ]
 }

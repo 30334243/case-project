@@ -1,0 +1,30 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 23,
+        "patch": 0
+    },
+    "include": [
+        "config.json"
+    ],
+    "packagePresets": [
+        {
+            "name": "vs-2019-benchmark-package",
+            "configurePreset": "vs-2019-benchmark",
+            "configurations": [
+                "Debug",
+                "Release"
+            ],
+            "packageDirectory": "install",
+            "generators": [
+                "ZIP"
+            ],
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        }
+    ]
+}

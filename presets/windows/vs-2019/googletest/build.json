@@ -1,0 +1,38 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 23,
+        "patch": 0
+    },
+    "include": [
+        "config.json"
+    ],
+    "buildPresets": [
+        {
+            "name": "vs-2019-googletest",
+            "hidden": true,
+            "configurePreset": "vs-2019-googletest",
+            "jobs": 16,
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "vs-2019-googletest-debug",
+            "inherits": [
+                "vs-2019-googletest"
+            ],
+            "configuration": "Debug"
+        },
+        {
+            "name": "vs-2019-googletest-release",
+            "inherits": [
+                "vs-2019-googletest"
+            ],
+            "configuration": "Release"
+        }
+    ]
+}

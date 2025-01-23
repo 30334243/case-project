@@ -1,0 +1,17 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 23,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "name",
+            "hidden": true,
+            "environment": {
+                "PROJECT_NAME": "case-project"
+            }
+        }
+    ]
+}

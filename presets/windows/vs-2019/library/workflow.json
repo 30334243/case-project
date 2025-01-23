@@ -1,0 +1,60 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 23,
+        "patch": 0
+    },
+    "include": [
+        "static/config.json",
+        "shared/config.json",
+        "static/build.json",
+        "shared/build.json",
+        "static/package.json",
+        "shared/package.json"
+    ],
+    "workflowPresets": [
+        {
+            "name": "vs-2019-library-static-ci",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "vs-2019-library-static"
+                },
+                {
+                    "type": "build",
+                    "name": "vs-2019-library-static-debug"
+                },
+                {
+                    "type": "build",
+                    "name": "vs-2019-library-static-release"
+                },
+                {
+                    "type": "package",
+                    "name": "vs-2019-library-static-package"
+                }
+            ]
+        },
+        {
+            "name": "vs-2019-library-shared-ci",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "vs-2019-library-shared"
+                },
+                {
+                    "type": "build",
+                    "name": "vs-2019-library-shared-debug"
+                },
+                {
+                    "type": "build",
+                    "name": "vs-2019-library-shared-release"
+                },
+                {
+                    "type": "package",
+                    "name": "vs-2019-library-shared-package"
+                }
+            ]
+        }
+    ]
+}

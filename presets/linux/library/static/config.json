@@ -1,0 +1,41 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 23,
+        "patch": 0
+    },
+    "include": [
+        "../config.json"
+    ],
+    "configurePresets": [
+        {
+            "name": "linux-library-static-debug",
+            "inherits": [
+                "linux-library"
+            ],
+            "cacheVariables": {
+                "CMAKE_SHARED_LIBS": "OFF"
+            },
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Linux"
+            }
+        },
+        {
+            "name": "linux-library-static-release",
+            "inherits": [
+                "linux-library"
+            ],
+            "cacheVariables": {
+                "CMAKE_SHARED_LIBS": "OFF"
+            },
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Linux"
+            }
+        }
+    ]
+}

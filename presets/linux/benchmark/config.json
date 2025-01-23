@@ -1,0 +1,48 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 23,
+        "patch": 0
+    },
+    "include": [
+        "../linux.json"
+    ],
+    "configurePresets": [
+        {
+            "name": "linux-benchmark",
+            "hidden": true,
+            "inherits": [
+                "linux"
+            ],
+            "cacheVariables": {
+                "IS_BENCHMARK": "ON"
+            },
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Linux"
+            }
+        },
+        {
+            "name": "linux-benchmark-debug",
+            "inherits": [
+                "linux-benchmark"
+            ],
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "benchmark_DIR": "$env{HOME_PATH}/cxx/$env{PROJECT_NAME}/3rdparty/$env{OS}/benchmark-debug/lib/cmake/benchmark"
+            }
+        },
+        {
+            "name": "linux-benchmark-release",
+            "inherits": [
+                "linux-benchmark"
+            ],
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release",
+                "benchmark_DIR": "$env{HOME_PATH}/cxx/$env{PROJECT_NAME}/3rdparty/$env{OS}/benchmark-release/lib/cmake/benchmark"
+            }
+        }
+    ]
+}

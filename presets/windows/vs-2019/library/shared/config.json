@@ -1,0 +1,27 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 23,
+        "patch": 0
+    },
+    "include": [
+        "../config.json"
+    ],
+    "configurePresets": [
+        {
+            "name": "vs-2019-library-shared",
+            "inherits": [
+                "vs-2019-library"
+            ],
+            "cacheVariables": {
+                "CMAKE_SHARED_LIBS": "ON"
+            },
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        }
+    ]
+}

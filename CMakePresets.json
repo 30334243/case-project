@@ -6,9 +6,11 @@
     "patch": 0
   },
   "include": [
-    "presets/windows/vs-2019/lib/workflow.json",
-    "presets/windows/vs-2019/test/workflow.json",
-    "presets/linux/lib/workflow.json",
-    "presets/linux/test/workflow.json"
+    "presets/windows/vs-2019/library/workflow.json",
+    "presets/windows/vs-2019/googletest/workflow.json",
+    "presets/windows/vs-2019/benchmark/workflow.json",
+    "presets/linux/library/workflow.json",
+    "presets/linux/googletest/workflow.json",
+    "presets/linux/benchmark/workflow.json"
   ]
 }

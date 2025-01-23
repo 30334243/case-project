@@ -1,0 +1,46 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 23,
+        "patch": 0
+    },
+    "include": [
+        "../config.json"
+    ],
+    "configurePresets": [
+        {
+            "name": "linux-library-shared",
+            "hidden": true,
+            "inherits": [
+                "linux-library"
+            ],
+            "cacheVariables": {
+                "CMAKE_SHARED_LIBS": "ON"
+            },
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Linux"
+            }
+        },
+        {
+            "name": "linux-library-shared-debug",
+            "inherits": [
+                "linux-library-shared"
+            ],
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        },
+        {
+            "name": "linux-library-shared-release",
+            "inherits": [
+                "linux-library-shared"
+            ],
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release"
+            }
+        }
+    ]
+}

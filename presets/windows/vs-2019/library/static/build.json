@@ -1,0 +1,39 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 23,
+        "patch": 0
+    },
+    "include": [
+        "config.json"
+    ],
+    "buildPresets": [
+        {
+            "name": "vs-2019-library-static",
+            "hidden": true,
+            "configurePreset": "vs-2019-library-static",
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "vs-2019-library-static-debug",
+            "inherits": [
+                "vs-2019-library-static"
+            ],
+            "configurePreset": "vs-2019-library-static",
+            "configuration": "Debug"
+        },
+        {
+            "name": "vs-2019-library-static-release",
+            "inherits": [
+                "vs-2019-library-static"
+            ],
+            "configurePreset": "vs-2019-library-static",
+            "configuration": "Release"
+        }
+    ]
+}

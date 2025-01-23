@@ -1,0 +1,38 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 23,
+        "patch": 0
+    },
+    "include": [
+        "config.json"
+    ],
+    "buildPresets": [
+        {
+            "name": "linux-library-shared-build",
+            "hidden": true,
+            "configurePreset": "linux-library-shared-debug",
+            "jobs": 16,
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Linux"
+            }
+        },
+        {
+            "name": "linux-library-shared-debug-build",
+            "inherits": [
+                "linux-library-shared-build"
+            ],
+            "configurePreset": "linux-library-shared-debug"
+        },
+        {
+            "name": "linux-library-shared-release-build",
+            "inherits": [
+                "linux-library-shared-build"
+            ],
+            "configurePreset": "linux-library-shared-release"
+        }
+    ]
+}

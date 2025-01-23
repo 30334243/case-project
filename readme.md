@@ -1,137 +1,84 @@
 # **Скелет проекта**
+![general-struct](share/general-struct.png)
+
+## Изменить имя проекта в `CMakeLists.txt` и `presets/name.json`
+> Имя проетка должно соответствоть имени директории
+### Вывести все `workflow`
 ~~~
--project
-|  -3rdparty
-|  |  -windows
-|  |  |  -vs-2019
-|  |  |  |  -<lib>
-|  |  |  |  ...
-|  |  |  ...
-|  |  -linux
-|  |  |  -<lib>-debug
-|  |  |  -<lib>-release
-|  |  |  ...
-|  -lib
-|  |  -include
-|  |  -src
-|  |  CMakeLists.txt
-|  |  Config.cmake.in
-|  -test
-|  |  CMakeLists.txt
-|  |  main.cpp
-|  -presets
-|  |  -linux
-|  |  |  -lib
-|  |  |  |  wrokflow.json
-|  |  |  -test
-|  |  |  |  test.json
-|  |  |  |  wrokflow.json
-|  |  |  config.json
-|  |  |  build.json
-|  |  |  package.json
-|  |  |  paths.json
-|  |  -windows
-|  |  |  -vs-2019
-|  |  |  ...
-|  |  |  paths.json
-|  |  |  windows.json
-|  |  environment.json
-|  |  test.json
-|  -cmake
-|  |  add_test_user_module.cmake
-|  |  exporting.cmake
-|  |  user_functions.cmake
-|  .gitignore
-|  CMakePresets.json
-|  CMakeLists.txt
-|  readme.md
+cmake --workflow --list-presets
+Available workflow presets:
+
+  "vs-2019-library-static-ci"
+  "vs-2019-library-shared-ci"
+  "vs-2019-googletest-ci"
+  "vs-2019-benchmark-ci"
+  "linux-library-static-debug-ci"
+  "linux-library-static-release-ci"
+  "linux-library-shared-debug-ci"
+  "linux-library-shared-release-ci"
+  "linux-googletest-debug-ci"
+  "linux-googletest-release-ci"
+  "linux-benchmark-debug-ci"
+  "linux-benchmark-release-ci"
 ~~~
-# **Обязательные изменения**
-1. Изменить имя проекта в `CMakeLists.txt`
-    ~~~
-    project(<name_project>)
-    ~~~
-1. В файле `presets/environment.json` изменить имя проекта на свое
-    ~~~
-    {
-    ...
-    "configurePresets": [
-        {
-            "name": "environment",
-            "hidden": true,
-            "environment": {
-                "PROJECT_NAME": "<name_project>"
-            }
-        }
-    ]
-    ...
-    }
-    ~~~
- 2. В файле `presets/test.json` изменить имена тестов (если тестов несколько использовать `"name": "<name_tests1>|<name_tests2>"` или удалить фильтр)
-    ~~~
-    ...
-    "filter": {
-        "include": {
-            "name": "<name_tests>"
-        }
-    }
-    ...
-    ~~~
-# **Опциональные изменения**
-1. В файле `presets/windows.json` установить свои переменные
-    ~~~
-    ...
-    "cacheVariables": {
-        "WINDOWS_FLAG": "ON",
-        "OPS_TEST": "ON",
-        "OPS_BENCHMARK": "ON",
-        "GTest_DIR": "$env{USERPROFILE}/cxx/$env{PROJECT_NAME}/3rdparty/windows/vs-2019/GTest/lib/cmake/GTest",
-        "fmt_DIR": "$env{USERPROFILE}/cxx/$env{PROJECT_NAME}/3rdparty/windows/vs-2019/fmt/lib/cmake/fmt"
-    }
-    ...
-    ~~~
-2. В файле `presets/linux/config.json` установить свои переменные
-    ~~~
-    {
-    ...
-    "cacheVariables": {
-        "ASTRA_FLAG": "ON"
-    }
-    ...
-    }
-    ~~~
-3. Для `astra` подключить `filesystem` (если нужно) в `lib/CMakeLists.txt`
-    ~~~
-    if(ASTRA_FLAG)
-        target_link_libraries(${PROJECT_NAME} PUBLIC stdc++fs)
-    endif()
-    ~~~
-1. Переменные в конфигурации в `Linux` для `release` и `debug` 
-    ~~~
-    ...
-    "name": "linux-debug",
-    "inherits": [
-        "linux"
-    ],
-    "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "Debug",
-        "GTest_DIR": "$env{HOME}/cxx/$env{PROJECT_NAME}/3rdparty/linux/GTest-debug/lib/cmake/GTest"
-    }
-    ...
-    ~~~
-2. Добавить копирование тестовых файлов в `test/CMakeLists.txt` (если нужно)
-    ~~~
-    add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
-            COMMAND ${CMAKE_COMMAND} -E copy_directory "${CMAKE_CURRENT_SOURCE_DIR}/files" "${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/files"
-            COMMAND ${CMAKE_COMMAND} -E copy_directory "${CMAKE_CURRENT_SOURCE_DIR}/files" "${CMAKE_BINARY_DIR}/test/files"
-    )
-    ~~~
-3. Добавить поиск необходимых библиотек в `CMakeLists.txt`
-    ~~~
-    find_package(GTest CONFIG REQUIRED)
-    message("GTest=${GTest_VERSION}")
-    ~~~
-4. Добавить переменные cmake в исходники (если нужно)
-    ~~~
-    add_definitions(-DWINDOWS_FLAG)
-    ~~~
+### Запустить `workflow`
+~~~
+cmake --workflow --preset vs-2019-benchmark-ci
+~~~
+### Вывести все `config` (зависить от ОС)
+~~~
+cmake --list-presets
+Available configure presets:
+
+  "vs-2019-library-static"
+  "vs-2019-library-shared"
+  "vs-2019-googletest"
+  "vs-2019-benchmark"
+~~~
+### Запустить `config`
+~~~
+cmake --preset vs-2019-benchmark
+~~~
+### Вывести все `build` (зависить от ОС)
+~~~
+cmake --build --list-presets
+Available build presets:
+
+  "vs-2019-library-static-debug"
+  "vs-2019-library-static-release"
+  "vs-2019-library-shared-debug"
+  "vs-2019-library-shared-release"
+  "vs-2019-googletest-debug"
+  "vs-2019-googletest-release"
+  "vs-2019-benchmark-debug"
+  "vs-2019-benchmark-release"
+~~~
+### Запустить `build`
+~~~
+cmake --build --preset vs-2019-benchmark-release
+~~~
+### Вывести все `test` (зависить от ОС)
+~~~
+ctest --list-presets
+Available test presets:
+
+  "vs-2019-googletest-debug-test"
+  "vs-2019-googletest-release-test"
+~~~
+### Запустить `test`
+~~~
+ctest --preset vs-2019-benchmark-release-test
+~~~
+### Вывести все `package` (зависить от ОС)
+~~~
+Available package presets:
+
+  "vs-2019-library-static-package"
+  "vs-2019-library-shared-package"
+  "vs-2019-googletest-package"
+  "vs-2019-benchmark-package"
+~~~
+### Запустить `package`
+~~~
+cpack --preset vs-2019-benchmark-release-package
+~~~
