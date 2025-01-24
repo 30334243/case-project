@@ -1,3 +1,4 @@
+include("${CMAKE_SOURCE_DIR}/cmake/user_functions.cmake")
 include("${CMAKE_SOURCE_DIR}/cmake/exporting.cmake")
 
 FILE(GLOB HEADERS "${CMAKE_CURRENT_SOURCE_DIR}/include/*.h")
@@ -16,7 +17,8 @@ target_include_directories(${PROJECT_NAME}
     "$<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>"
 )
 
-target_link_libraries(${PROJECT_NAME} PUBLIC fmt::fmt)
+target_link_libraries(${PROJECT_NAME} PUBLIC fmt::fmt easy_profiler)
+copy_dependencies(${PROJECT_NAME} fmt::fmt easy_profiler)
 
 # if(ASTRA_FLAG)
 #     target_link_libraries(${PROJECT_NAME} PUBLIC stdc++fs)

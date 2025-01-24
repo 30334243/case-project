@@ -5,7 +5,6 @@ function(add_benchmark_user_module NAME)
     add_executable(${NAME} main.cpp)
     if(ARGN)
         target_link_libraries(${NAME} PRIVATE ${ARGN})
-        copy_dependencies(${NAME} benchmark::benchmark fmt::fmt)
 
         set_target_properties(${NAME} PROPERTIES
             FOLDER Benchmark

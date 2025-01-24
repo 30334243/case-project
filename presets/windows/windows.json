@@ -18,7 +18,8 @@
             "cacheVariables": {
                 "WINDOWS_FLAG": "ON",
                 "CMAKE_DEBUG_POSTFIX": "d",
-                "fmt_DIR": "$env{HOME_PATH}/cxx/$env{PROJECT_NAME}/3rdparty/$env{OS}/fmt/lib/cmake/fmt"
+                "fmt_DIR": "$env{HOME_PATH}/cxx/$env{PROJECT_NAME}/3rdparty/$env{OS}/fmt/lib/cmake/fmt",
+                "easy_profiler_DIR": "$env{HOME_PATH}/cxx/$env{PROJECT_NAME}/3rdparty/$env{OS}/easy_profiler/lib/cmake/easy_profiler"
             },
             "binaryDir": "$env{HOME_PATH}/cxx/builds/$env{PROJECT_NAME}/$env{OS}/${presetName}"
         }

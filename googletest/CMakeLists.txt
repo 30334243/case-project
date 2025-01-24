@@ -4,7 +4,7 @@ add_test_user_module(
         test_${PROJECT_NAME}
         GTest::gtest
         GTest::gtest_main
-        fmt::fmt
+        easy_profiler
         ${PROJECT_NAME}
 )
 

@@ -12,13 +12,12 @@ set(CMAKE_CXX_STANDARD 17)
 
 find_package(fmt CONFIG REQUIRED)
 message("fmt=${fmt_VERSION}")
+find_package(easy_profiler CONFIG REQUIRED)
+message("easy_profiler=${easy_profiler_VERSION}")
 
 if(IS_LIBRARY)
-    add_definitions(-DIS_LIBRARY)
     add_subdirectory(library)
-endif()
-
-if(IS_GOOGLETEST)
+elseif(IS_GOOGLETEST)
     add_definitions(-DIS_GOOGLETEST)
     add_subdirectory(library)
 
@@ -26,9 +25,7 @@ if(IS_GOOGLETEST)
     message("GTest=${GTest_VERSION}")
 
     add_subdirectory(googletest)
-endif()
-
-if(IS_BENCHMARK)
+elseif(IS_BENCHMARK)
     add_definitions(-DIS_BENCHMARK)
     add_subdirectory(library)
 

@@ -5,7 +5,6 @@ function(add_test_user_module NAME)
     add_executable(${NAME} main.cpp)
     if (ARGN)
         target_link_libraries(${NAME} PRIVATE ${ARGN})
-        copy_dependencies(${NAME} GTest::gtest GTest::gtest_main fmt::fmt)
         
         set_target_properties(${NAME} PROPERTIES
             FOLDER Tests
