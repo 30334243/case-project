@@ -18,13 +18,8 @@
 #pragma warning Unknown dynamic link import / export semantics.
 #endif
 
-EXPORT void dummy_noexept(int val) noexcept;
-EXPORT void dummy(int val);
-
-EXPORT void std_string_view(std::unordered_map<std::string, int>& map, int i);
-EXPORT void std_string(std::unordered_map<std::string, int>& map, int i);
-EXPORT void std_string_view_map(std::map<std::string, int>& map, int i);
-EXPORT void std_string_map(std::map<std::string, int>& map, int i);
+EXPORT int dummy_noexept(int val) noexcept;
+EXPORT int dummy(int val);
 
 struct EXPORT Dummy_noexport {
     void dummy_noexept(int val) noexcept;
