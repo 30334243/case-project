@@ -1,26 +1,70 @@
 #include "example.h"
 #include <benchmark/benchmark.h>
 
-static void BM_example_0(benchmark::State& state) {
-    int y{};
-    for (auto _: state) {
-        benchmark::DoNotOptimize(y);
-        benchmark::ClobberMemory();
-    }
-    state.SetBytesProcessed(int64_t(state.iterations()) *
-                            int64_t(state.range(0)));
-}
-BENCHMARK(BM_example_0)->Arg(0)->Arg(1);
+static constexpr int kArg1 {100};
+static constexpr int kArg2 {500};
+static constexpr int kArg3 {10000};
 
-static void BM_example_1(benchmark::State& state) {
-    int y{};
+// static void BM_example_function_noexcept(benchmark::State& state) {
+//     for (auto _: state) {
+//         dummy_noexept(state.range(0));
+//     }
+//     state.SetBytesProcessed(int64_t(state.iterations()) *
+//                             int64_t(state.range(0)));
+// }
+// BENCHMARK(BM_example_function_noexcept)->Arg(kArg1)->Arg(kArg2);
+
+// static void BM_example_function(benchmark::State& state) {
+//     for (auto _: state) {
+//         dummy(state.range(0));
+//     }
+//     state.SetBytesProcessed(int64_t(state.iterations()) *
+//                             int64_t(state.range(0)));
+// }
+// BENCHMARK(BM_example_function)->Arg(kArg1)->Arg(kArg2);
+
+// static void BM_example_struct_noexcept(benchmark::State& state) {
+//     Dummy_noexport dummy {};
+//     for (auto _: state) {
+//         dummy.dummy_noexept(state.range(0));
+//     }
+//     state.SetBytesProcessed(int64_t(state.iterations()) *
+//                             int64_t(state.range(0)));
+// }
+// BENCHMARK(BM_example_struct_noexcept)->Arg(kArg1)->Arg(kArg2);
+
+// static void BM_example_struct(benchmark::State& state) {
+//     Dummy dummy {};
+//     for (auto _: state) {
+//         dummy.dummy(state.range(0));
+//     }
+//     state.SetBytesProcessed(int64_t(state.iterations()) *
+//                             int64_t(state.range(0)));
+// }
+// BENCHMARK(BM_example_struct)->Arg(kArg1)->Arg(kArg2);
+
+static void BM_example_string_view(benchmark::State& state) {
+    std::unordered_map<std::string, int> map {};
     for (auto _: state) {
-        benchmark::DoNotOptimize(y);
-        benchmark::ClobberMemory();
+        std_string_view(map, state.range(0));
+        // benchmark::DoNotOptimize(map);
+        // benchmark::ClobberMemory();
     }
     state.SetBytesProcessed(int64_t(state.iterations()) *
                             int64_t(state.range(0)));
 }
-BENCHMARK(BM_example_1)->Arg(0)->Arg(1);
+BENCHMARK(BM_example_string_view)->Arg(kArg1)->Arg(kArg2)->Arg(kArg3);
+
+static void BM_example_string(benchmark::State& state) {
+    std::unordered_map<std::string, int> map {};
+    for (auto _: state) {
+        std_string(map, state.range(0));
+        // benchmark::DoNotOptimize(map);
+        // benchmark::ClobberMemory();
+    }
+    state.SetBytesProcessed(int64_t(state.iterations()) *
+                            int64_t(state.range(0)));
+}
+BENCHMARK(BM_example_string)->Arg(kArg1)->Arg(kArg2)->Arg(kArg3);
 
 BENCHMARK_MAIN();
