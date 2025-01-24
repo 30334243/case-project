@@ -25,7 +25,7 @@ Available workflow presets:
 ~~~
 cmake --workflow --preset vs-2019-benchmark-ci
 ~~~
-### Вывести все `config` (зависить от ОС)
+### Вывести все `config` (зависит от ОС)
 ~~~
 cmake --list-presets
 Available configure presets:
@@ -39,7 +39,7 @@ Available configure presets:
 ~~~
 cmake --preset vs-2019-benchmark
 ~~~
-### Вывести все `build` (зависить от ОС)
+### Вывести все `build` (зависит от ОС)
 ~~~
 cmake --build --list-presets
 Available build presets:
@@ -57,7 +57,7 @@ Available build presets:
 ~~~
 cmake --build --preset vs-2019-benchmark-release
 ~~~
-### Вывести все `test` (зависить от ОС)
+### Вывести все `test` (зависит от ОС)
 ~~~
 ctest --list-presets
 Available test presets:
@@ -69,7 +69,7 @@ Available test presets:
 ~~~
 ctest --preset vs-2019-benchmark-release-test
 ~~~
-### Вывести все `package` (зависить от ОС)
+### Вывести все `package` (зависит от ОС)
 ~~~
 Available package presets:
 
