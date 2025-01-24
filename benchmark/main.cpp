@@ -1,5 +1,6 @@
 #include "example.h"
 #include <benchmark/benchmark.h>
+#include <ctime>
 
 static constexpr int kArg1 {100};
 static constexpr int kArg2 {500};
