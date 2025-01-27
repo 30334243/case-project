@@ -32,7 +32,7 @@
             ],
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug",
-                "GTest_DIR": "${sourceDir}/3rdparty/$env{OS}/GTest-debug/lib/cmake/GTest"
+                "GTest_DIR": "${sourceDir}/3rdparty/linux/GTest-debug/lib/cmake/GTest"
             }
         },
         {
@@ -43,7 +43,7 @@
             ],
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Release",
-                "GTest_DIR": "${sourceDir}/3rdparty/$env{OS}/GTest-release/lib/cmake/GTest"
+                "GTest_DIR": "${sourceDir}/3rdparty/linux/GTest-release/lib/cmake/GTest"
             }
         }
     ]

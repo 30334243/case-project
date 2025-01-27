@@ -32,7 +32,7 @@
             ],
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug",
-                "benchmark_DIR": "$env{HOME_PATH}/cxx/$env{PROJECT_NAME}/3rdparty/$env{OS}/benchmark-debug/lib/cmake/benchmark"
+                "benchmark_DIR": "${sourceDir}/3rdparty/linux/benchmark-debug/lib/cmake/benchmark"
             }
         },
         {
@@ -43,7 +43,7 @@
             ],
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Release",
-                "benchmark_DIR": "$env{HOME_PATH}/cxx/$env{PROJECT_NAME}/3rdparty/$env{OS}/benchmark-release/lib/cmake/benchmark"
+                "benchmark_DIR": "${sourceDir}/3rdparty/linux/benchmark-release/lib/cmake/benchmark"
             }
         }
     ]

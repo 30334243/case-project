@@ -17,8 +17,12 @@ target_include_directories(${PROJECT_NAME}
     "$<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>"
 )
 
-target_link_libraries(${PROJECT_NAME} PUBLIC fmt::fmt easy_profiler)
-copy_dependencies(${PROJECT_NAME} fmt::fmt easy_profiler)
+set(DEPENDENESIES fmt::fmt)
+if(IS_WINDOWS)
+    string(APPEND DEPENDENESIES easy_profiler)
+endif()
+target_link_libraries(${PROJECT_NAME} PUBLIC ${DEPENDENESIES})
+copy_dependencies(${PROJECT_NAME} ${DEPENDENESIES})
 
 # if(ASTRA_FLAG)
 #     target_link_libraries(${PROJECT_NAME} PUBLIC stdc++fs)

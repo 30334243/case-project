@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../bin/Debug/libcase-project.a "CMakeFiles/case-project.dir/src/example.cpp.o"
+/usr/bin/ranlib ../bin/Debug/libcase-project.a

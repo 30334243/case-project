@@ -1,0 +1,38 @@
+Start testing: Jan 27 13:53 MSK
+----------------------------------------------------------
+1/1 Testing: benchmark_case-project
+1/1 Test: benchmark_case-project
+Command: "/home/astra/cxx/case-project/builds/linux/linux-benchmark-release/bin/Release/benchmark_case-project"
+Directory: /home/astra/cxx/case-project/builds/linux/linux-benchmark-release/benchmark
+"benchmark_case-project" start time: Jan 27 13:53 MSK
+Output:
+----------------------------------------------------------
+2025-01-27T13:53:55+03:00
+Running /home/astra/cxx/case-project/builds/linux/linux-benchmark-release/bin/Release/benchmark_case-project
+Run on (16 X 2904 MHz CPU s)
+CPU Caches:
+  L1 Data 32 KiB (x8)
+  L1 Instruction 32 KiB (x8)
+  L2 Unified 256 KiB (x8)
+  L3 Unified 16384 KiB (x1)
+Load Average: 0.20, 0.08, 0.02
+-------------------------------------------------------------------------------------------
+Benchmark                                 Time             CPU   Iterations UserCounters...
+-------------------------------------------------------------------------------------------
+BM_example_function_noexcept/100       7.95 ns         7.95 ns     85028539 bytes_per_second=11.715Gi/s
+BM_example_function_noexcept/500       36.5 ns         36.5 ns     19197364 bytes_per_second=12.7716Gi/s
+BM_example_function/100                7.81 ns         7.81 ns     89924592 bytes_per_second=11.9218Gi/s
+BM_example_function/500                38.0 ns         38.0 ns     19066992 bytes_per_second=12.2699Gi/s
+BM_example_struct_noexcept/100         94.7 ns         94.7 ns      7368491 bytes_per_second=1006.85Mi/s
+BM_example_struct_noexcept/500          573 ns          573 ns      1209917 bytes_per_second=832.133Mi/s
+BM_example_struct/100                  94.2 ns         94.2 ns      7357756 bytes_per_second=1012.85Mi/s
+BM_example_struct/500                   576 ns          576 ns      1208182 bytes_per_second=827.626Mi/s
+<end of output>
+Test time =   6.92 sec
+----------------------------------------------------------
+Test Passed.
+"benchmark_case-project" end time: Jan 27 13:54 MSK
+"benchmark_case-project" time elapsed: 00:00:06
+----------------------------------------------------------
+
+End testing: Jan 27 13:54 MSK

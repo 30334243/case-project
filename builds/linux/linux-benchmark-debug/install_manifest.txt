@@ -1,0 +1,6 @@
+/home/astra/cxx/case-project/builds/linux/linux-benchmark-debug/install/_CPack_Packages/Linux/ZIP/case-project-0.1.1-Linux/lib/libcase-project.a
+/home/astra/cxx/case-project/builds/linux/linux-benchmark-debug/install/_CPack_Packages/Linux/ZIP/case-project-0.1.1-Linux/include/example.h
+/home/astra/cxx/case-project/builds/linux/linux-benchmark-debug/install/_CPack_Packages/Linux/ZIP/case-project-0.1.1-Linux/lib/cmake/case-project/case-projectTargets.cmake
+/home/astra/cxx/case-project/builds/linux/linux-benchmark-debug/install/_CPack_Packages/Linux/ZIP/case-project-0.1.1-Linux/lib/cmake/case-project/case-projectTargets-debug.cmake
+/home/astra/cxx/case-project/builds/linux/linux-benchmark-debug/install/_CPack_Packages/Linux/ZIP/case-project-0.1.1-Linux/lib/cmake/case-project/case-projectConfig.cmake
+/home/astra/cxx/case-project/builds/linux/linux-benchmark-debug/install/_CPack_Packages/Linux/ZIP/case-project-0.1.1-Linux/lib/cmake/case-project/case-projectConfigVersion.cmake

@@ -13,7 +13,7 @@
             "cacheVariables": {
                 "LINUX_FLAG": "ON"
             },
-            "binaryDir": "${sourceDir}/builds/$env{PROJECT_NAME}/$env{OS}/${presetName}"
+            "binaryDir": "${sourceDir}/builds/$env{PROJECT_NAME}/linux/${presetName}"
         },
         {
             "name": "linux-debug",
@@ -22,7 +22,7 @@
                 "linux"
             ],
             "cacheVariables": {
-                "fmt_DIR": "${sourceDir}/3rdparty/$env{OS}/fmt-debug/lib/cmake/fmt"
+                "fmt_DIR": "${sourceDir}/3rdparty/linux/fmt-debug/lib/cmake/fmt"
             }
         },
         {
@@ -32,7 +32,7 @@
                 "linux"
             ],
             "cacheVariables": {
-                "fmt_DIR": "${sourceDir}/3rdparty/$env{OS}/fmt-release/lib/cmake/fmt"
+                "fmt_DIR": "${sourceDir}/3rdparty/linux/fmt-release/lib/cmake/fmt"
             }
         }
     ]
