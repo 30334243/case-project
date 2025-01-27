@@ -1,9 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"/home/astra/cxx/case-project/builds/linux/linux-benchmark-release/cmake_install.cmake",
-		"/home/astra/cxx/case-project/builds/linux/linux-benchmark-release/library/cmake_install.cmake",
-		"/home/astra/cxx/case-project/builds/linux/linux-benchmark-release/benchmark/cmake_install.cmake"
-	],
-	"Parallel" : false
-}

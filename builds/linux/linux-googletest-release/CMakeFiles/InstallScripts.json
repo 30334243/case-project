@@ -1,9 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"/home/astra/cxx/case-project/builds/linux/linux-googletest-release/cmake_install.cmake",
-		"/home/astra/cxx/case-project/builds/linux/linux-googletest-release/library/cmake_install.cmake",
-		"/home/astra/cxx/case-project/builds/linux/linux-googletest-release/googletest/cmake_install.cmake"
-	],
-	"Parallel" : false
-}

@@ -1,1 +1,0 @@
-/usr/bin/c++ -O3 -DNDEBUG "CMakeFiles/benchmark_case-project.dir/main.cpp.o" -o ../bin/Release/benchmark_case-project  /home/astra/cxx/case-project/3rdparty/linux/benchmark-release/lib/libbenchmark.a ../bin/Release/libcase-project.a -lpthread -lrt /home/astra/cxx/case-project/3rdparty/linux/fmt-release/lib/libfmt.a
