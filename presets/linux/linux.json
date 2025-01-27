@@ -5,21 +5,15 @@
         "minor": 23,
         "patch": 0
     },
-    "include": [
-        "environment.json"
-    ],
     "configurePresets": [
         {
             "name": "linux",
             "hidden": true,
-            "inherits": [
-                "linux-environment"
-            ],
             "generator": "Unix Makefiles",
             "cacheVariables": {
                 "LINUX_FLAG": "ON"
             },
-            "binaryDir": "$env{HOME_PATH}/cxx/builds/$env{PROJECT_NAME}/$env{OS}/${presetName}"
+            "binaryDir": "${sourceDir}/builds/$env{PROJECT_NAME}/$env{OS}/${presetName}"
         },
         {
             "name": "linux-debug",
@@ -28,7 +22,7 @@
                 "linux"
             ],
             "cacheVariables": {
-                "fmt_DIR": "$env{HOME_PATH}/cxx/$env{PROJECT_NAME}/3rdparty/$env{OS}/fmt-debug/lib/cmake/fmt"
+                "fmt_DIR": "${sourceDir}/3rdparty/$env{OS}/fmt-debug/lib/cmake/fmt"
             }
         },
         {
@@ -38,7 +32,7 @@
                 "linux"
             ],
             "cacheVariables": {
-                "fmt_DIR": "$env{HOME_PATH}/cxx/$env{PROJECT_NAME}/3rdparty/$env{OS}/fmt-release/lib/cmake/fmt"
+                "fmt_DIR": "${sourceDir}/3rdparty/$env{OS}/fmt-release/lib/cmake/fmt"
             }
         }
     ]

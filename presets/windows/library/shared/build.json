@@ -1,0 +1,39 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 23,
+        "patch": 0
+    },
+    "include": [
+        "config.json"
+    ],
+    "buildPresets": [
+        {
+            "name": "windows-library-shared",
+            "hidden": true,
+            "configurePreset": "windows-library-shared",
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "windows-library-shared-debug",
+            "inherits": [
+                "windows-library-shared"
+            ],
+            "configurePreset": "windows-library-shared",
+            "configuration": "Debug"
+        },
+        {
+            "name": "windows-library-shared-release",
+            "inherits": [
+                "windows-library-shared"
+            ],
+            "configurePreset": "windows-library-shared",
+            "configuration": "Release"
+        }
+    ]
+}

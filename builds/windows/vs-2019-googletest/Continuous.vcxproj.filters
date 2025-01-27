@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\zero\cxx\case-project\builds\windows\vs-2019-googletest\CMakeFiles\d5a22892d4811e28971647837d1ed164\Continuous.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\zero\cxx\case-project\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\zero\cxx\case-project\builds\windows\vs-2019-googletest\CMakeFiles\Continuous" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{CA47C196-9A47-351B-AEE1-1659A4D15F22}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

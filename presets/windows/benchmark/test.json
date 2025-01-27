@@ -1,0 +1,42 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 23,
+        "patch": 0
+    },
+    "include": [
+        "config.json",
+        "../../test.json"
+    ],
+    "testPresets": [
+        {
+            "name": "windows-benchmark-test",
+            "hidden": true,
+            "inherits": [
+                "default"
+            ],
+            "configurePreset": "windows-benchmark",
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "windows-benchmark-debug-test",
+            "inherits": [
+                "windows-benchmark-test"
+            ],
+            "configuration": "Debug"
+        },
+        {
+            "name": "windows-benchmark-release-test",
+            "inherits": [
+                "windows-benchmark-test"
+            ],
+            "configurePreset": "windows-benchmark",
+            "configuration": "Release"
+        }
+    ]
+}

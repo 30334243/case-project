@@ -1,0 +1,49 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 23,
+        "patch": 0
+    },
+    "include": [
+        "config.json",
+        "build.json",
+        "test.json",
+        "package.json"
+    ],
+    "workflowPresets": [
+        {
+            "name": "windows-benchmark-ci",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "windows-benchmark"
+                },
+                {
+                    "type": "build",
+                    "name": "windows-benchmark-debug"
+                },
+                {
+                    "type": "build",
+                    "name": "windows-benchmark-release"
+                },
+                {
+                    "type": "package",
+                    "name": "windows-benchmark-package"
+                },
+                {
+                    "type": "test",
+                    "name": "windows-benchmark-debug-test"
+                },
+                {
+                    "type": "test",
+                    "name": "windows-benchmark-release-test"
+                },
+                {
+                    "type": "package",
+                    "name": "windows-benchmark-package"
+                }
+            ]
+        }
+    ]
+}

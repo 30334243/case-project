@@ -1,0 +1,17 @@
+C:/Users/zero/cxx/case-project/builds/windows/windows-benchmark/CMakeFiles/Experimental.dir
+C:/Users/zero/cxx/case-project/builds/windows/windows-benchmark/CMakeFiles/Nightly.dir
+C:/Users/zero/cxx/case-project/builds/windows/windows-benchmark/CMakeFiles/Continuous.dir
+C:/Users/zero/cxx/case-project/builds/windows/windows-benchmark/CMakeFiles/NightlyMemoryCheck.dir
+C:/Users/zero/cxx/case-project/builds/windows/windows-benchmark/CMakeFiles/PACKAGE.dir
+C:/Users/zero/cxx/case-project/builds/windows/windows-benchmark/CMakeFiles/RUN_TESTS.dir
+C:/Users/zero/cxx/case-project/builds/windows/windows-benchmark/CMakeFiles/INSTALL.dir
+C:/Users/zero/cxx/case-project/builds/windows/windows-benchmark/CMakeFiles/ALL_BUILD.dir
+C:/Users/zero/cxx/case-project/builds/windows/windows-benchmark/CMakeFiles/ZERO_CHECK.dir
+C:/Users/zero/cxx/case-project/builds/windows/windows-benchmark/library/CMakeFiles/case-project.dir
+C:/Users/zero/cxx/case-project/builds/windows/windows-benchmark/library/CMakeFiles/PACKAGE.dir
+C:/Users/zero/cxx/case-project/builds/windows/windows-benchmark/library/CMakeFiles/RUN_TESTS.dir
+C:/Users/zero/cxx/case-project/builds/windows/windows-benchmark/library/CMakeFiles/INSTALL.dir
+C:/Users/zero/cxx/case-project/builds/windows/windows-benchmark/benchmark/CMakeFiles/benchmark_case-project.dir
+C:/Users/zero/cxx/case-project/builds/windows/windows-benchmark/benchmark/CMakeFiles/PACKAGE.dir
+C:/Users/zero/cxx/case-project/builds/windows/windows-benchmark/benchmark/CMakeFiles/RUN_TESTS.dir
+C:/Users/zero/cxx/case-project/builds/windows/windows-benchmark/benchmark/CMakeFiles/INSTALL.dir

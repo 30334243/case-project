@@ -1,0 +1,38 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 23,
+        "patch": 0
+    },
+    "include": [
+        "config.json"
+    ],
+    "buildPresets": [
+        {
+            "name": "windows-googletest",
+            "hidden": true,
+            "configurePreset": "windows-googletest",
+            "jobs": 16,
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "windows-googletest-debug",
+            "inherits": [
+                "windows-googletest"
+            ],
+            "configuration": "Debug"
+        },
+        {
+            "name": "windows-googletest-release",
+            "inherits": [
+                "windows-googletest"
+            ],
+            "configuration": "Release"
+        }
+    ]
+}

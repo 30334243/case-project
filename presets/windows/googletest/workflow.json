@@ -1,0 +1,45 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 23,
+        "patch": 0
+    },
+    "include": [
+        "config.json",
+        "test.json",
+        "build.json",
+        "package.json"
+    ],
+    "workflowPresets": [
+        {
+            "name": "windows-googletest-ci",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "windows-googletest"
+                },
+                {
+                    "type": "build",
+                    "name": "windows-googletest-debug"
+                },
+                {
+                    "type": "build",
+                    "name": "windows-googletest-release"
+                },
+                {
+                    "type": "test",
+                    "name": "windows-googletest-debug-test"
+                },
+                {
+                    "type": "test",
+                    "name": "windows-googletest-release-test"
+                },
+                {
+                    "type": "package",
+                    "name": "windows-googletest-package"
+                }
+            ]
+        }
+    ]
+}

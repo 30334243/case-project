@@ -1,0 +1,6 @@
+C:/Users/zero/cxx/case-project/builds/windows/vs-2019-googletest/install/_CPack_Packages/win64/ZIP/case-project-0.1.1-win64/lib/case-project.lib
+C:/Users/zero/cxx/case-project/builds/windows/vs-2019-googletest/install/_CPack_Packages/win64/ZIP/case-project-0.1.1-win64/include/example.h
+C:/Users/zero/cxx/case-project/builds/windows/vs-2019-googletest/install/_CPack_Packages/win64/ZIP/case-project-0.1.1-win64/lib/cmake/case-project/case-projectTargets.cmake
+C:/Users/zero/cxx/case-project/builds/windows/vs-2019-googletest/install/_CPack_Packages/win64/ZIP/case-project-0.1.1-win64/lib/cmake/case-project/case-projectTargets-release.cmake
+C:/Users/zero/cxx/case-project/builds/windows/vs-2019-googletest/install/_CPack_Packages/win64/ZIP/case-project-0.1.1-win64/lib/cmake/case-project/case-projectConfig.cmake
+C:/Users/zero/cxx/case-project/builds/windows/vs-2019-googletest/install/_CPack_Packages/win64/ZIP/case-project-0.1.1-win64/lib/cmake/case-project/case-projectConfigVersion.cmake

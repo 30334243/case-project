@@ -45,9 +45,10 @@ int main(int argc, char** argv) {
 #if defined(_MSC_VER)
     EASY_PROFILER_ENABLE;
 #endif
-    ::testing::InitGoogleTest(&argc, argv);
 
+    ::testing::InitGoogleTest(&argc, argv);
     auto res {RUN_ALL_TESTS()};
+    
 #if defined(_MSC_VER)
     profiler::dumpBlocksToFile("test_profile.prof");
 #endif

@@ -1,0 +1,19 @@
+Start testing: Jan 27 12:56 RTZ 2 (зима)
+----------------------------------------------------------
+Unable to find executable: C:/Users/zero/cxx/case-project/builds/windows/vs-2019-benchmark/bin/Release/benchmark_case-project.exe
+1/1 Testing: benchmark_case-project
+1/1 Test: benchmark_case-project
+Command: ""
+Directory: C:/Users/zero/cxx/case-project/builds/windows/vs-2019-benchmark/benchmark
+"benchmark_case-project" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"benchmark_case-project" end time: Jan 27 12:56 RTZ 2 (зима)
+"benchmark_case-project" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Jan 27 12:56 RTZ 2 (зима)
