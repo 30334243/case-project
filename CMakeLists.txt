@@ -12,7 +12,7 @@ set(CMAKE_CXX_STANDARD 17)
 
 find_package(fmt CONFIG REQUIRED)
 message("fmt=${fmt_VERSION}")
-if(IS_WINDOWS)
+if(WINDOWS_FLAG)
     find_package(easy_profiler CONFIG REQUIRED)
     message("easy_profiler=${easy_profiler_VERSION}")
 endif()

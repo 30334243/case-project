@@ -18,8 +18,8 @@ target_include_directories(${PROJECT_NAME}
 )
 
 set(DEPENDENESIES fmt::fmt)
-if(IS_WINDOWS)
-    string(APPEND DEPENDENESIES easy_profiler)
+if(WINDOWS_FLAG)
+    list(APPEND DEPENDENESIES easy_profiler)
 endif()
 target_link_libraries(${PROJECT_NAME} PUBLIC ${DEPENDENESIES})
 copy_dependencies(${PROJECT_NAME} ${DEPENDENESIES})
