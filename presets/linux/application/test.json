@@ -1,0 +1,43 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 23,
+        "patch": 0
+    },
+    "include": [
+        "config.json",
+        "../../test.json"
+    ],
+    "testPresets": [
+        {
+            "name": "linux-application-test",
+            "hidden": true,
+            "inherits": [
+                "default"
+            ],
+            "configurePreset": "linux-application",
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Linux"
+            }
+        },
+        {
+            "name": "linux-application-debug-test",
+            "inherits": [
+                "linux-application-test"
+            ],
+            "configurePreset": "linux-application-debug",
+            "configuration": "Debug"
+        },
+        {
+            "name": "linux-application-release-test",
+            "inherits": [
+                "linux-application-test"
+            ],
+            "configurePreset": "linux-application-release",
+            "configuration": "Release"
+        }
+    ]
+}

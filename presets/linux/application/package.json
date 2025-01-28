@@ -1,0 +1,47 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 23,
+        "patch": 0
+    },
+    "include": [
+        "config.json"
+    ],
+    "packagePresets": [
+        {
+            "name": "linux-application-package",
+            "hidden": true,
+            "configurePreset": "linux-application",
+            "packageDirectory": "install",
+            "generators": [
+                "ZIP"
+            ],
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Linux"
+            }
+        },
+        {
+            "name": "linux-application-debug-package",
+            "inherits": [
+                "linux-application-package"
+            ],
+            "configurePreset": "linux-application-debug",
+            "configurations": [
+                "Debug"
+            ]
+        },
+        {
+            "name": "linux-application-release-package",
+            "inherits": [
+                "linux-application-package"
+            ],
+            "configurePreset": "linux-application-release",
+            "configurations": [
+                "Release"
+            ]
+        }
+    ]
+}

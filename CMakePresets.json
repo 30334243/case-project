@@ -13,6 +13,7 @@
     "presets/linux/library/workflow.json",
     "presets/linux/googletest/workflow.json",
     "presets/linux/benchmark/workflow.json",
+    "presets/linux/application/workflow.json",
     "presets/msys/library/workflow.json",
     "presets/msys/googletest/workflow.json",
     "presets/msys/benchmark/workflow.json",

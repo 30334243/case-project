@@ -29,20 +29,14 @@
             "inherits": [
                 "msys-application",
                 "msys-debug"
-            ],
-            "cacheVariables": {
-                "CMAKE_BUILD_TYPE": "Debug"
-            }
+            ]
         },
         {
             "name": "msys-application-release",
             "inherits": [
                 "msys-application",
                 "msys-release"
-            ],
-            "cacheVariables": {
-                "CMAKE_BUILD_TYPE": "Release"
-            }
+            ]
         }
     ]
 }

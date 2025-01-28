@@ -12,9 +12,6 @@
         {
             "name": "linux-googletest",
             "hidden": true,
-            "inherits": [
-                "linux"
-            ],
             "cacheVariables": {
                 "IS_GOOGLETEST": "ON"
             },
@@ -31,8 +28,7 @@
                 "linux-debug"
             ],
             "cacheVariables": {
-                "CMAKE_BUILD_TYPE": "Debug",
-                "GTest_DIR": "${sourceDir}/3rdparty/linux/GTest-debug/lib/cmake/GTest"
+                "GTest_DIR": "${sourceDir}/3rdparty/linux/googletest-debug/lib/cmake/GTest"
             }
         },
         {
@@ -42,8 +38,7 @@
                 "linux-release"
             ],
             "cacheVariables": {
-                "CMAKE_BUILD_TYPE": "Release",
-                "GTest_DIR": "${sourceDir}/3rdparty/linux/GTest-release/lib/cmake/GTest"
+                "GTest_DIR": "${sourceDir}/3rdparty/linux/googletest-release/lib/cmake/GTest"
             }
         }
     ]

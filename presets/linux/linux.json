@@ -22,6 +22,7 @@
                 "linux"
             ],
             "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
                 "fmt_DIR": "${sourceDir}/3rdparty/linux/fmt-debug/lib/cmake/fmt"
             }
         },
@@ -32,6 +33,7 @@
                 "linux"
             ],
             "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release",
                 "fmt_DIR": "${sourceDir}/3rdparty/linux/fmt-release/lib/cmake/fmt"
             }
         }

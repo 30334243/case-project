@@ -10,10 +10,10 @@
     ],
     "configurePresets": [
         {
-            "name": "linux-benchmark",
+            "name": "linux-application",
             "hidden": true,
             "cacheVariables": {
-                "IS_BENCHMARK": "ON"
+                "IS_APPLICATION": "ON"
             },
             "condition": {
                 "type": "equals",
@@ -22,24 +22,18 @@
             }
         },
         {
-            "name": "linux-benchmark-debug",
+            "name": "linux-application-debug",
             "inherits": [
-                "linux-benchmark",
+                "linux-application",
                 "linux-debug"
-            ],
-            "cacheVariables": {
-                "benchmark_DIR": "${sourceDir}/3rdparty/linux/benchmark-debug/lib/cmake/benchmark"
-            }
+            ]
         },
         {
-            "name": "linux-benchmark-release",
+            "name": "linux-application-release",
             "inherits": [
-                "linux-benchmark",
+                "linux-application",
                 "linux-release"
-            ],
-            "cacheVariables": {
-                "benchmark_DIR": "${sourceDir}/3rdparty/linux/benchmark-release/lib/cmake/benchmark"
-            }
+            ]
         }
     ]
 }
