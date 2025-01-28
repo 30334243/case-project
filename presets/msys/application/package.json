@@ -1,0 +1,47 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 23,
+        "patch": 0
+    },
+    "include": [
+        "config.json"
+    ],
+    "packagePresets": [
+        {
+            "name": "msys-application-package",
+            "hidden": true,
+            "configurePreset": "msys-application",
+            "packageDirectory": "install",
+            "generators": [
+                "ZIP"
+            ],
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "msys-application-debug-package",
+            "inherits": [
+                "msys-application-package"
+            ],
+            "configurePreset": "msys-application-debug",
+            "configurations": [
+                "Debug"
+            ]
+        },
+        {
+            "name": "msys-application-release-package",
+            "inherits": [
+                "msys-application-package"
+            ],
+            "configurePreset": "msys-application-release",
+            "configurations": [
+                "Release"
+            ]
+        }
+    ]
+}

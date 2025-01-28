@@ -1,0 +1,38 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 23,
+        "patch": 0
+    },
+    "include": [
+        "config.json"
+    ],
+    "buildPresets": [
+        {
+            "name": "windows-application",
+            "hidden": true,
+            "configurePreset": "windows-application",
+            "jobs": 16,
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "windows-application-debug",
+            "inherits": [
+                "windows-application"
+            ],
+            "configuration": "Debug"
+        },
+        {
+            "name": "windows-application-release",
+            "inherits": [
+                "windows-application"
+            ],
+            "configuration": "Release"
+        }
+    ]
+}

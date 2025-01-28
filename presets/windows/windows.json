@@ -9,7 +9,7 @@
         {
             "name": "windows",
             "hidden": true,
-            "generator": "Visual Studio 17 2022",
+            "generator": "Visual Studio 16 2019",
             "cacheVariables": {
                 "WINDOWS_FLAG": "ON",
                 "CMAKE_DEBUG_POSTFIX": "d",

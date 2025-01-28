@@ -1,0 +1,45 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 23,
+        "patch": 0
+    },
+    "include": [
+        "config.json",
+        "build.json",
+        "test.json",
+        "package.json"
+    ],
+    "workflowPresets": [
+        {
+            "name": "windows-application-ci",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "windows-application"
+                },
+                {
+                    "type": "build",
+                    "name": "windows-application-debug"
+                },
+                {
+                    "type": "build",
+                    "name": "windows-application-release"
+                },
+                {
+                    "type": "test",
+                    "name": "windows-application-debug-test"
+                },
+                {
+                    "type": "test",
+                    "name": "windows-application-release-test"
+                },
+                {
+                    "type": "package",
+                    "name": "windows-application-package"
+                }
+            ]
+        }
+    ]
+}

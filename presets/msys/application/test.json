@@ -1,0 +1,43 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 23,
+        "patch": 0
+    },
+    "include": [
+        "config.json",
+        "../../test.json"
+    ],
+    "testPresets": [
+        {
+            "name": "msys-application-test",
+            "hidden": true,
+            "inherits": [
+                "default"
+            ],
+            "configurePreset": "msys-application",
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "msys-application-debug-test",
+            "inherits": [
+                "msys-application-test"
+            ],
+            "configurePreset": "msys-application-debug",
+            "configuration": "Debug"
+        },
+        {
+            "name": "msys-application-release-test",
+            "inherits": [
+                "msys-application-test"
+            ],
+            "configurePreset": "msys-application-release",
+            "configuration": "Release"
+        }
+    ]
+}
