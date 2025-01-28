@@ -1,0 +1,58 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 23,
+        "patch": 0
+    },
+    "include": [
+        "config.json",
+        "test.json",
+        "build.json",
+        "package.json"
+    ],
+    "workflowPresets": [
+        {
+            "name": "msys-googletest-debug-ci",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "msys-googletest-debug"
+                },
+                {
+                    "type": "build",
+                    "name": "msys-googletest-debug-build"
+                },
+                {
+                    "type": "test",
+                    "name": "msys-googletest-debug-test"
+                },
+                {
+                    "type": "package",
+                    "name": "msys-googletest-debug-package"
+                }
+            ]
+        },
+        {
+            "name": "msys-googletest-release-ci",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "msys-googletest-release"
+                },
+                {
+                    "type": "build",
+                    "name": "msys-googletest-release-build"
+                },
+                {
+                    "type": "test",
+                    "name": "msys-googletest-release-test"
+                },
+                {
+                    "type": "package",
+                    "name": "msys-googletest-release-package"
+                }
+            ]
+        }
+    ]
+}

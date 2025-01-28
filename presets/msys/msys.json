@@ -1,0 +1,45 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 23,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "msys",
+            "hidden": true,
+            "generator": "MinGW Makefiles",
+            "cacheVariables": {
+                "MSYS_FLAG": "ON",
+                "CMAKE_DEBUG_POSTFIX": "d",
+                "CMAKE_MAKE_PROGRAM": "c:/msys64/clang64/bin/mingw32-make.exe",
+                "CMAKE_C_COMPILER": "c:/msys64/clang64/bin/clang.exe",
+                "CMAKE_CXX_COMPILER": "c:/msys64/clang64/bin/clang++.exe"
+            },
+            "binaryDir": "${sourceDir}/builds/$env{PROJECT_NAME}/msys/${presetName}"
+        },
+        {
+            "name": "msys-debug",
+            "hidden": true,
+            "inherits": [
+                "msys"
+            ],
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "fmt_DIR": "${sourceDir}/3rdparty/msys/fmt-debug/lib/cmake/fmt"
+            }
+        },
+        {
+            "name": "msys-release",
+            "hidden": true,
+            "inherits": [
+                "msys"
+            ],
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release",
+                "fmt_DIR": "${sourceDir}/3rdparty/msys/fmt-release/lib/cmake/fmt"
+            }
+        }
+    ]
+}

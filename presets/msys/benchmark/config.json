@@ -1,0 +1,50 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 23,
+        "patch": 0
+    },
+    "include": [
+        "../msys.json"
+    ],
+    "configurePresets": [
+        {
+            "name": "msys-benchmark",
+            "hidden": true,
+            "inherits": [
+                "msys"
+            ],
+            "cacheVariables": {
+                "IS_BENCHMARK": "ON"
+            },
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "msys-benchmark-debug",
+            "inherits": [
+                "msys-benchmark",
+                "msys-debug"
+            ],
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "benchmark_DIR": "${sourceDir}/3rdparty/msys/benchmark-debug/lib/cmake/benchmark"
+            }
+        },
+        {
+            "name": "msys-benchmark-release",
+            "inherits": [
+                "msys-benchmark",
+                "msys-release"
+            ],
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release",
+                "benchmark_DIR": "${sourceDir}/3rdparty/msys/benchmark-release/lib/cmake/benchmark"
+            }
+        }
+    ]
+}

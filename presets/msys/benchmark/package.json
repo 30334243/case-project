@@ -1,0 +1,47 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 23,
+        "patch": 0
+    },
+    "include": [
+        "config.json"
+    ],
+    "packagePresets": [
+        {
+            "name": "msys-benchmark-package",
+            "hidden": true,
+            "configurePreset": "msys-benchmark",
+            "packageDirectory": "install",
+            "generators": [
+                "ZIP"
+            ],
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "msys-benchmark-debug-package",
+            "inherits": [
+                "msys-benchmark-package"
+            ],
+            "configurePreset": "msys-benchmark-debug",
+            "configurations": [
+                "Debug"
+            ]
+        },
+        {
+            "name": "msys-benchmark-release-package",
+            "inherits": [
+                "msys-benchmark-package"
+            ],
+            "configurePreset": "msys-benchmark-release",
+            "configurations": [
+                "Release"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,50 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 23,
+        "patch": 0
+    },
+    "include": [
+        "../msys.json"
+    ],
+    "configurePresets": [
+        {
+            "name": "msys-googletest",
+            "hidden": true,
+            "inherits": [
+                "msys"
+            ],
+            "cacheVariables": {
+                "IS_GOOGLETEST": "ON"
+            },
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "msys-googletest-debug",
+            "inherits": [
+                "msys-googletest",
+                "msys-debug"
+            ],
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "GTest_DIR": "${sourceDir}/3rdparty/msys/googletest-debug/lib/cmake/GTest"
+            }
+        },
+        {
+            "name": "msys-googletest-release",
+            "inherits": [
+                "msys-googletest",
+                "msys-release"
+            ],
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release",
+                "GTest_DIR": "${sourceDir}/3rdparty/msys/googletest-release/lib/cmake/GTest"
+            }
+        }
+    ]
+}

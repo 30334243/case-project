@@ -1,0 +1,86 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 23,
+        "patch": 0
+    },
+    "include": [
+        "static/config.json",
+        "shared/config.json",
+        "static/build.json",
+        "shared/build.json",
+        "static/package.json",
+        "shared/package.json"
+    ],
+    "workflowPresets": [
+        {
+            "name": "msys-library-static-debug-ci",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "msys-library-static-debug"
+                },
+                {
+                    "type": "build",
+                    "name": "msys-library-static-debug-build"
+                },
+                {
+                    "type": "package",
+                    "name": "msys-library-static-debug-package"
+                }
+            ]
+        },
+        {
+            "name": "msys-library-static-release-ci",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "msys-library-static-release"
+                },
+                {
+                    "type": "build",
+                    "name": "msys-library-static-release-build"
+                },
+                {
+                    "type": "package",
+                    "name": "msys-library-static-release-package"
+                }
+            ]
+        },
+        {
+            "name": "msys-library-shared-debug-ci",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "msys-library-shared-debug"
+                },
+                {
+                    "type": "build",
+                    "name": "msys-library-shared-debug-build"
+                },
+                {
+                    "type": "package",
+                    "name": "msys-library-shared-debug-package"
+                }
+            ]
+        },
+        {
+            "name": "msys-library-shared-release-ci",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "msys-library-shared-release"
+                },
+                {
+                    "type": "build",
+                    "name": "msys-library-shared-release-build"
+                },
+                {
+                    "type": "package",
+                    "name": "msys-library-shared-release-package"
+                }
+            ]
+        }
+    ]
+}
