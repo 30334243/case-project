@@ -82,3 +82,9 @@ Available package presets:
 ~~~
 cpack --preset vs-2019-benchmark-release-package
 ~~~
+### Для workflow msys нужно в .vscode/settings.json указать путь до cmake.exe который используется в msys
+~~~
+{
+    "cmake.cmakePath": "C:/msys64/clang64/bin/cmake.exe"
+}
+~~~
