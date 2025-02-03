@@ -14,7 +14,11 @@
                 "WINDOWS_FLAG": "ON",
                 "CMAKE_DEBUG_POSTFIX": "d",
                 "fmt_DIR": "${sourceDir}/3rdparty/windows/fmt/lib/cmake/fmt",
-                "easy_profiler_DIR": "${sourceDir}/3rdparty/windows/easy_profiler/lib/cmake/easy_profiler"
+                "easy_profiler_DIR": "${sourceDir}/3rdparty/windows/easy_profiler/lib/cmake/easy_profiler",
+                "mongoc-1.0_DIR": "${sourceDir}/3rdparty/windows/mongo-c-driver/lib/cmake/mongoc-1.0",
+                "bson-1.0_DIR": "${sourceDir}/3rdparty/windows/mongo-c-driver/lib/cmake/bson-1.0",
+                "mongocxx_DIR": "${sourceDir}/3rdparty/windows/mongo-cxx-driver/lib/cmake/mongocxx-4.0.0",
+                "bsoncxx_DIR": "${sourceDir}/3rdparty/windows/mongo-cxx-driver/lib/cmake/bsoncxx-4.0.0"
             },
             "binaryDir": "${sourceDir}/builds/windows/${presetName}",
             "installDir": "${sourceDir}/builds/windows/${presetName}/install"
