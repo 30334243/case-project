@@ -16,7 +16,8 @@
                 "fmt_DIR": "${sourceDir}/3rdparty/windows/fmt/lib/cmake/fmt",
                 "easy_profiler_DIR": "${sourceDir}/3rdparty/windows/easy_profiler/lib/cmake/easy_profiler"
             },
-            "binaryDir": "${sourceDir}/builds/windows/${presetName}"
+            "binaryDir": "${sourceDir}/builds/windows/${presetName}",
+            "installDir": "${sourceDir}/builds/windows/${presetName}/install"
         }
     ]
 }
