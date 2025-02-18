@@ -17,7 +17,7 @@
                 "linux-library"
             ],
             "cacheVariables": {
-                "CMAKE_SHARED_LIBS": "ON"
+                "BUILD_SHARED_LIBS": "OFF"
             },
             "condition": {
                 "type": "equals",
@@ -30,20 +30,14 @@
             "inherits": [
                 "linux-library-static",
                 "linux-debug"
-            ],
-            "cacheVariables": {
-                "CMAKE_SHARED_LIBS": "OFF"
-            }
+            ]
         },
         {
             "name": "linux-library-static-release",
             "inherits": [
                 "linux-library-static",
                 "linux-release"
-            ],
-            "cacheVariables": {
-                "CMAKE_SHARED_LIBS": "OFF"
-            }
+            ]
         }
     ]
 }

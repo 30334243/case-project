@@ -17,7 +17,7 @@
                 "msys-library"
             ],
             "cacheVariables": {
-                "CMAKE_SHARED_LIBS": "ON"
+                "BUILD_SHARED_LIBS": "OFF"
             },
             "condition": {
                 "type": "equals",
@@ -30,20 +30,14 @@
             "inherits": [
                 "msys-library-static",
                 "msys-debug"
-            ],
-            "cacheVariables": {
-                "CMAKE_SHARED_LIBS": "OFF"
-            }
+            ]
         },
         {
             "name": "msys-library-static-release",
             "inherits": [
                 "msys-library-static",
                 "msys-release"
-            ],
-            "cacheVariables": {
-                "CMAKE_SHARED_LIBS": "OFF"
-            }
+            ]
         }
     ]
 }

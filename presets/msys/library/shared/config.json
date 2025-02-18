@@ -16,7 +16,7 @@
                 "msys-library"
             ],
             "cacheVariables": {
-                "CMAKE_SHARED_LIBS": "ON"
+                "BUILD_SHARED_LIBS": "ON"
             },
             "condition": {
                 "type": "equals",
@@ -29,20 +29,14 @@
             "inherits": [
                 "msys-library-shared",
                 "msys-debug"
-            ],
-            "cacheVariables": {
-                "CMAKE_BUILD_TYPE": "Debug"
-            }
+            ]
         },
         {
             "name": "msys-library-shared-release",
             "inherits": [
                 "msys-library-shared",
-                "msys-debug"
-            ],
-            "cacheVariables": {
-                "CMAKE_BUILD_TYPE": "Release"
-            }
+                "msys-release"
+            ]
         }
     ]
 }

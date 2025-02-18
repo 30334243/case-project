@@ -15,7 +15,7 @@
                 "windows-library"
             ],
             "cacheVariables": {
-                "CMAKE_SHARED_LIBS": "ON"
+                "BUILD_SHARED_LIBS": "ON"
             },
             "condition": {
                 "type": "equals",
