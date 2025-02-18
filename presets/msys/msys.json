@@ -17,7 +17,8 @@
                 "CMAKE_C_COMPILER": "c:/msys64/clang64/bin/clang.exe",
                 "CMAKE_CXX_COMPILER": "c:/msys64/clang64/bin/clang++.exe"
             },
-            "binaryDir": "${sourceDir}/builds/$env{PROJECT_NAME}/msys/${presetName}"
+            "binaryDir": "${sourceDir}/builds/msys/${presetName}",
+            "installDir": "${sourceDir}/builds/msys/${presetName}/install"
         },
         {
             "name": "msys-debug",
