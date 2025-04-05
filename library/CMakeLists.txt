@@ -6,8 +6,8 @@ FILE(GLOB SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp")
 
 find_package(fmt CONFIG REQUIRED)
 message("fmt=${fmt_VERSION}")
-find_package(mongocxx CONFIG REQUIRED)
-message("mongocxx=${mongocxx_VERSION}")
+find_package(Boost REQUIRED)
+message("Boost=${Boost_VERSION}")
 
 if(CMAKE_SHARED_LIBS)
     add_library(${PROJECT_NAME} SHARED ${HEADERS} ${SOURCES})
@@ -22,11 +22,9 @@ target_include_directories(${PROJECT_NAME}
     "$<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>"
 )
 
-set(DEPENDENESIES fmt::fmt mongo::mongocxx_shared mongo::bsoncxx_shared mongo::mongoc_shared mongo::bson_shared)
-if(WINDOWS_FLAG)
-    list(APPEND DEPENDENESIES easy_profiler)
-endif()
+set(DEPENDENESIES fmt::fmt)
 target_link_libraries(${PROJECT_NAME} PUBLIC ${DEPENDENESIES})
+target_link_libraries(${PROJECT_NAME} PUBLIC Boost::boost)
 copy_dependencies(${PROJECT_NAME} ${DEPENDENESIES})
 
 # if(ASTRA_FLAG)

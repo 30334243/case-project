@@ -23,11 +23,7 @@
             ],
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug",
-                "fmt_DIR": "${sourceDir}/3rdparty/linux/fmt-debug/lib/cmake/fmt",
-                "mongoc-1.0_DIR": "${sourceDir}/3rdparty/linux/mongo-c-driver-debug/lib/cmake/mongoc-1.0",
-                "bson-1.0_DIR": "${sourceDir}/3rdparty/linux/mongo-c-driver-debug/lib/cmake/bson-1.0",
-                "mongocxx_DIR": "${sourceDir}/3rdparty/linux/mongo-cxx-driver-debug/lib/cmake/mongocxx-4.0.0",
-                "bsoncxx_DIR": "${sourceDir}/3rdparty/linux/mongo-cxx-driver-debug/lib/cmake/bsoncxx-4.0.0"
+                "fmt_DIR": "${sourceDir}/3rdparty/linux/fmt-debug/lib/cmake/fmt"
             }
         },
         {
@@ -38,11 +34,7 @@
             ],
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Release",
-                "fmt_DIR": "${sourceDir}/3rdparty/linux/fmt-release/lib/cmake/fmt",
-                "mongoc-1.0_DIR": "${sourceDir}/3rdparty/linux/mongo-c-driver-release/lib/cmake/mongoc-1.0",
-                "bson-1.0_DIR": "${sourceDir}/3rdparty/linux/mongo-c-driver-release/lib/cmake/bson-1.0",
-                "mongocxx_DIR": "${sourceDir}/3rdparty/linux/mongo-cxx-driver-release/lib/cmake/mongocxx-4.0.0",
-                "bsoncxx_DIR": "${sourceDir}/3rdparty/linux/mongo-cxx-driver-release/lib/cmake/bsoncxx-4.0.0"
+                "fmt_DIR": "${sourceDir}/3rdparty/linux/fmt-release/lib/cmake/fmt"
             }
         }
     ]
