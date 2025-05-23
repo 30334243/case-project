@@ -1,0 +1,8 @@
+#pragma once
+
+#include <filesystem>
+
+#cmakedefine EXTERNAL_DIRECTORY_FILES "@kEXTERNAL_DIRECTORY_FILES@"
+static inline std::filesystem::path kEXTERNAL_DIRECTORY_FILES{EXTERNAL_DIRECTORY_FILES};
+static inline std::filesystem::path kEXTERNAL_OUT_DIRECTORY_FILES{kEXTERNAL_DIRECTORY_FILES / "out"};
+static inline std::filesystem::path kEXTERNAL_STANDARD_DIRECTORY_FILES{kEXTERNAL_DIRECTORY_FILES / "standard"};

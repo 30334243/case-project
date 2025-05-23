@@ -6,17 +6,7 @@
     "patch": 0
   },
   "include": [
-    "presets/windows/library/workflow.json",
-    "presets/windows/googletest/workflow.json",
-    "presets/windows/benchmark/workflow.json",
-    "presets/windows/application/workflow.json",
-    "presets/linux/library/workflow.json",
-    "presets/linux/googletest/workflow.json",
-    "presets/linux/benchmark/workflow.json",
-    "presets/linux/application/workflow.json",
-    "presets/msys/library/workflow.json",
-    "presets/msys/googletest/workflow.json",
-    "presets/msys/benchmark/workflow.json",
-    "presets/msys/application/workflow.json"
+    "presets/windows.json",
+    "presets/windows_build.json"
   ]
 }

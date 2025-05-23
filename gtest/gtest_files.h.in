@@ -1,0 +1,3 @@
+#pragma once
+#cmakedefine GTEST_DIRECTORY "@GTEST_DIRECTORY@"
+#cmakedefine GTEST_BIN_DIRECTORY "@GTEST_BIN_DIRECTORY@"

@@ -1,0 +1,27 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 23,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "windows",
+      "generator": "Visual Studio 16 2019",
+      "cacheVariables": {
+        "CMAKE_DEBUG_POSTFIX": "d",
+        "fmt_DIR": "${sourceDir}/3rdparty/windows/fmt/lib/cmake/fmt",
+        "GTest_DIR": "${sourceDir}/3rdparty/windows/googletest/lib/cmake/GTest",
+        "benchmark_DIR": "${sourceDir}/3rdparty/windows/benchmark/lib/cmake/benchmark"
+      },
+      "binaryDir": "${sourceDir}/builds/${presetName}",
+      "installDir": "${sourceDir}/builds/${presetName}/install",
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Windows"
+      }
+    }
+  ]
+}
