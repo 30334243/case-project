@@ -9,6 +9,7 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 project(case-project)
 include(CPack)
 include(CTest)
+include(check_environment)
 enable_testing()
 set(CMAKE_CXX_STANDARD 17)
 

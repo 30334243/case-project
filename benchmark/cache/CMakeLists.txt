@@ -6,8 +6,5 @@ add_subdirectory(slowly)
 
 add_custom_target(
         diff_cache
-        COMMAND ${QUICKLY} "--benchmark_out=${QUICKLY}.json" "--benchmark_out_format=json" "--benchmark_repetitions=10"
-        COMMAND ${SLOWLY} "--benchmark_out=${SLOWLY}.json" "--benchmark_out_format=json" "--benchmark_repetitions=10"
-        COMMAND gbenchdiff "${CMAKE_CURRENT_BINARY_DIR}/${QUICKLY}.json" "${CMAKE_CURRENT_BINARY_DIR}/${SLOWLY}.json"
-        COMMENT "Diff benchmarks: ${QUICKLY} and ${SLOWLY}"
+        COMMAND curl -O "https://drive.google.com/file/d/1uZq717ey7N7iq0UZLUjxmPvV0JY5aOcD/view?usp=sharing"
 )

@@ -1,6 +1,6 @@
 include("${CMAKE_SOURCE_DIR}/cmake/user_functions.cmake")
-#include("${CMAKE_SOURCE_DIR}/cmake/exporting.cmake")
 
+set(LIB_OBJ lib_obj)
 add_library(${LIB_OBJ} OBJECT example.cpp)
 target_include_directories(${LIB_OBJ}
         PUBLIC
@@ -18,15 +18,5 @@ target_precompile_headers(
         <fmt/core.h>
 )
 
-add_library(${LIB_STATIC} STATIC)
-target_link_libraries(${LIB_STATIC} PUBLIC ${LIB_OBJ})
-list(APPEND CMAKE_MESSAGE_INDENT "[${LIB_STATIC}] ")
-copy_dependencies(${LIB_STATIC} fmt::fmt)
-
-add_library(${LIB_SHARED} SHARED)
-target_link_libraries(${LIB_SHARED} PUBLIC ${LIB_OBJ})
-list(POP_BACK CMAKE_MESSAGE_INDENT)
-list(APPEND CMAKE_MESSAGE_INDENT "[${LIB_SHARED}] ")
-copy_dependencies(${LIB_SHARED} fmt::fmt)
-
-#exporting(${PROJECT_NAME})
+add_subdirectory(shared)
+add_subdirectory(static)

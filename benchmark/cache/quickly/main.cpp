@@ -1,4 +1,3 @@
-#include "example.h"
 #include "init_data.h"
 
 static void BM_cache(benchmark::State &state) {

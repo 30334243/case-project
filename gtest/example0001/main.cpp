@@ -1,5 +1,5 @@
 #include "example.h"
-#include "gtest_files.h"
+#include "external_directory.h"
 
 static constexpr int kIn_0{100};
 static constexpr int kIn_1{10000};

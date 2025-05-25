@@ -1,0 +1,48 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 23,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "windows",
+      "generator": "Visual Studio 16 2019",
+      "binaryDir": "${sourceDir}/builds/${presetName}",
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Windows"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "windows-build",
+      "hidden": true,
+      "configurePreset": "windows",
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Windows"
+      }
+    },
+    {
+      "name": "windows-build-debug",
+      "inherits": [
+        "windows-build"
+      ],
+      "configurePreset": "windows",
+      "configuration": "Debug"
+    },
+    {
+      "name": "windows-build-release",
+      "inherits": [
+        "windows-build"
+      ],
+      "configurePreset": "windows",
+      "configuration": "Release"
+    }
+  ]
+}
