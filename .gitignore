@@ -5,5 +5,4 @@ builds/
 Testing/
 share/*.dtmp
 share/*.bkp
-3rdparty/windows/
-3rdparty/linux/
+3rdparty/environment-main/

@@ -11,9 +11,11 @@
       "generator": "Visual Studio 16 2019",
       "cacheVariables": {
         "CMAKE_DEBUG_POSTFIX": "d",
-        "fmt_DIR": "${sourceDir}/3rdparty/windows/fmt/lib/cmake/fmt",
-        "GTest_DIR": "${sourceDir}/3rdparty/windows/googletest/lib/cmake/GTest",
-        "benchmark_DIR": "${sourceDir}/3rdparty/windows/benchmark/lib/cmake/benchmark"
+        "benchmark_DIR": "${sourceDir}/3rdparty/environment-main/windows/benchmark/lib/cmake/benchmark",
+        "Boost_DIR": "${sourceDir}/3rdparty/environment-main/windows/boost/stage/lib/cmake/Boost-1.87.0",
+        "GTest_DIR": "${sourceDir}/3rdparty/environment-main/windows/googletest/lib/cmake/GTest",
+        "fmt_DIR": "${sourceDir}/3rdparty/environment-main/windows/fmt/lib/cmake/fmt",
+        "nlohmann_json_DIR": "${sourceDir}/3rdparty/environment-main/windows/nlohmann_json/share/cmake/nlohmann_json"
       },
       "binaryDir": "${sourceDir}/builds/${presetName}",
       "installDir": "${sourceDir}/builds/${presetName}/install",
