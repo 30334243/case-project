@@ -1,0 +1,30 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 23,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "linux",
+      "generator": "Unix Makefiles",
+      "cacheVariables": {
+        "CMAKE_DEBUG_POSTFIX": "d",
+        "benchmark_DIR": "${sourceDir}/3rdparty/environment-main/linux/benchmark/lib/cmake/benchmark",
+        "Boost_DIR": "${sourceDir}/3rdparty/environment-main/linux/boost/stage/lib/cmake/Boost-1.87.0",
+        "easy_profiler_DIR": "${sourceDir}/3rdparty/environment-main/linux/easy_profiler/lib/cmake/easy_profiler",
+        "GTest_DIR": "${sourceDir}/3rdparty/environment-main/linux/googletest/lib/cmake/GTest",
+        "fmt_DIR": "${sourceDir}/3rdparty/environment-main/linux/fmt/lib/cmake/fmt",
+        "nlohmann_json_DIR": "${sourceDir}/3rdparty/environment-main/linux/nlohmann_json/share/cmake/nlohmann_json"
+      },
+      "binaryDir": "${sourceDir}/builds/${presetName}",
+      "installDir": "${sourceDir}/builds/${presetName}/install",
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Linux"
+      }
+    }
+  ]
+}

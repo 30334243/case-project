@@ -13,6 +13,7 @@
         "CMAKE_DEBUG_POSTFIX": "d",
         "benchmark_DIR": "${sourceDir}/3rdparty/environment-main/windows/benchmark/lib/cmake/benchmark",
         "Boost_DIR": "${sourceDir}/3rdparty/environment-main/windows/boost/stage/lib/cmake/Boost-1.87.0",
+        "easy_profiler_DIR": "${sourceDir}/3rdparty/environment-main/windows/easy_profiler/lib/cmake/easy_profiler",
         "GTest_DIR": "${sourceDir}/3rdparty/environment-main/windows/googletest/lib/cmake/GTest",
         "fmt_DIR": "${sourceDir}/3rdparty/environment-main/windows/fmt/lib/cmake/fmt",
         "nlohmann_json_DIR": "${sourceDir}/3rdparty/environment-main/windows/nlohmann_json/share/cmake/nlohmann_json"

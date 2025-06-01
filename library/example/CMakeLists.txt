@@ -7,7 +7,7 @@ target_include_directories(${LIB_OBJ}
         "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
         "$<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>"
 )
-target_link_libraries(${LIB_OBJ} PUBLIC fmt::fmt ${CONFIGURE_DIRECTORY})
+target_link_libraries(${LIB_OBJ} PUBLIC fmt::fmt easy_profiler ${CONFIGURE_DIRECTORY})
 target_link_libraries(${LIB_OBJ} PUBLIC Boost::boost)
 set_target_properties(${LIB_OBJ} PROPERTIES POSITION_INDEPENDENT_CODE ON)
 target_precompile_headers(
@@ -16,6 +16,7 @@ target_precompile_headers(
         <cstdint>
         <iostream>
         <fmt/core.h>
+        <easy/profiler.h>
 )
 
 add_subdirectory(shared)

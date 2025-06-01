@@ -1,6 +1,7 @@
 #include "example.h"
 
 int dummy_noexept(int val) noexcept {
+    EASY_FUNCTION(profiler::colors::Magenta);
     int y{};
     for (int i{}; i < val; ++i) {
         y += i;
@@ -9,6 +10,7 @@ int dummy_noexept(int val) noexcept {
 }
 
 int dummy(int val) {
+    EASY_FUNCTION(profiler::colors::Blue500);
     int y{};
     for (int i{}; i < val; ++i) {
         y += i;
