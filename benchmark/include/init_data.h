@@ -1,4 +1,5 @@
 #pragma once
+#include <vector>
 
 using double_vec_t = std::vector<std::vector<uint8_t> >;
 

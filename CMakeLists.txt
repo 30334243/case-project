@@ -19,18 +19,11 @@ if (${CMAKE_SYSTEM_NAME} STREQUAL "Windows" OR ${CMAKE_SYSTEM_NAME} STREQUAL "Li
 else ()
     include(CPack)
     include(CTest)
+    include(configure_directory)
     enable_testing()
     set(CMAKE_CXX_STANDARD 17)
 
-    # Большие тестируемые файлы лежат в домашней директории в ~/cxx/files/
-    # тамже находится директория выходных данных
-    set(EXTERNAL_DIRECTORY_FILES "$ENV{USERPROFILE}/cxx/files/")
-    file(TO_CMAKE_PATH ${EXTERNAL_DIRECTORY_FILES} kEXTERNAL_DIRECTORY_FILES)
-    configure_file(external_directory.h.in configure/external_directory.h)
-    configure_file(config.h.in configure/config.h)
-    set(CONFIGURE_DIRECTORY configure_directory)
-    add_library(${CONFIGURE_DIRECTORY} INTERFACE)
-    target_include_directories(${CONFIGURE_DIRECTORY} INTERFACE "${CMAKE_BINARY_DIR}/configure")
+    configure_directory()
 
     list(APPEND CMAKE_MESSAGE_INDENT "[${PROJECT_NAME}] ")
     find_package(easy_profiler CONFIG REQUIRED)
@@ -49,6 +42,11 @@ else ()
     set(LIB_OBJ lib_obj)
     set(LIB_STATIC lib_static)
     set(LIB_SHARED lib_shared)
+
+    set(LIB_2_OBJ lib_2_obj)
+    set(LIB_2_STATIC lib_2_static)
+    set(LIB_2_SHARED lib_2_shared)
+
     add_subdirectory(library)
     add_subdirectory(utils)
     add_subdirectory(gtest)

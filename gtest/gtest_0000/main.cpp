@@ -1,5 +1,6 @@
-#include "example.h"
+#include "lib_1.h"
 #include "external_directory.h"
+#include <gtest/gtest.h>
 
 static constexpr int kIn_0{100};
 static constexpr int kIn_1{10000};

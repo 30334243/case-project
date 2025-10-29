@@ -1,4 +1,6 @@
-#include "example.h"
+#include "lib_2.h"
+#include <easy/profiler.h>
+#include <fmt/core.h>
 
 int dummy_noexept(int val) noexcept {
     EASY_FUNCTION(profiler::colors::Magenta);
@@ -15,7 +17,7 @@ int dummy(int val) {
     for (int i{}; i < val; ++i) {
         y += i;
     }
-    std::cout << fmt::format("\n0x{:X}\n", y);
+    fmt::print("\n0x{:X}\n", y);
     return y;
 }
 

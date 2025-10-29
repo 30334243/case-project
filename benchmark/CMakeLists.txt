@@ -6,6 +6,5 @@ target_include_directories(
         "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
         "$<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>"
 )
-target_precompile_headers(${INIT_DATA} INTERFACE <algorithm> <benchmark/benchmark.h>)
 
 add_subdirectory(cache)

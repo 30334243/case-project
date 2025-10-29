@@ -1,0 +1,25 @@
+#pragma once
+
+#include "external_directory.h"
+#include <iostream>
+#include <boost/filesystem.hpp>
+
+namespace bfs = boost::filesystem;
+
+void removeFilesFromDirectory(const std::string& directoryPath) {
+    try {
+        if (!bfs::exists(directoryPath) || !bfs::is_directory(directoryPath)) {
+            std::cerr << "Директория не существует или не является директорией" << std::endl;
+            return;
+        }
+
+        for (bfs::directory_iterator it(directoryPath); it != bfs::directory_iterator(); ++it) {
+            if (bfs::is_regular_file(it->path())) {
+                bfs::remove(it->path());
+                std::cout << "Удален файл: " << it->path() << std::endl;
+            }
+        }
+    } catch (const bfs::filesystem_error& ex) {
+        std::cerr << "Ошибка: " << ex.what() << std::endl;
+    }
+}

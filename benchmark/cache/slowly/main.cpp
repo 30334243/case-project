@@ -1,4 +1,5 @@
 #include "init_data.h"
+#include <benchmark/benchmark.h>
 
 static void BM_cache(benchmark::State &state) {
     auto const size{state.range(0)};
